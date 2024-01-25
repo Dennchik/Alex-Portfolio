@@ -1,0 +1,28 @@
+.project-page {
+	display: flex;
+	height: 100%;
+
+	// .scills-page __column
+	&__column {
+		height: 100%;
+		flex: 0 1 50%;
+		@include flex-align-center;
+	}
+
+	// .scills-page __title
+	&__title {
+		color: #88c0ff;
+		height: 0;
+		font-size: 3rem;
+		transform: translate(10rem, -10rem);
+
+		span {
+			display: inline-block;
+			opacity: 0;
+		}
+		div {
+			display: block;
+		}
+	}
+}
+// -

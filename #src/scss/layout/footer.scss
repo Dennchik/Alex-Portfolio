@@ -1,0 +1,37 @@
+.footer {
+	flex: 0 1 100%;
+	@include flex-align-center-justify-space-between;
+
+	// .footer__column
+	&__column {
+		&:last-child {
+			border-left: 1px solid $border-color;
+		}
+	}
+
+	// .footer__items
+	&__items {
+		height: 3rem;
+		padding-left: 2rem;
+
+		.icon-telegram {
+			&::before {
+				// font-size: 1.4em;
+				@extend .icon-style;
+			}
+		}
+		.icon-git-hub-circle {
+			&::before {
+				font-size: 1.4rem;
+				@extend .icon-style;
+			}
+		}
+		@include flex-align-center;
+	}
+
+	// .footer__items-link
+	&__items-link {
+		height: 100%;
+		padding-left: 1.5rem;
+	}
+}

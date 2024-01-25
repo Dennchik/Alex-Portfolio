@@ -1,0 +1,89 @@
+.terminal {
+	display: grid;
+	// grid-template-rows: 0fr;
+	// opacity: 0;
+	transition: all 0.5s ease-in-out;
+	// .terminal__title
+	&__title {
+		padding: 0 1.5rem;
+		@include flex-align-center;
+		background: $background-color-title;
+		height: $titleHeight;
+		border-bottom: 1px solid $border-color;
+	}
+
+	// .terminal__menu
+	&__title-col {
+		flex: 0 100%;
+		color: $blue-light;
+	}
+
+	// .terminal__close
+	&__close-btn {
+		cursor: pointer;
+
+		height: 2.7rem;
+		width: 2.7rem;
+		border-radius: 0.7rem;
+		color: $blue-light;
+		&:hover {
+			background: $background-selected;
+			color: $orange;
+		}
+		.icon-cross-middle {
+			&::before {
+				font-size: 2rem;
+				font-weight: lighter;
+			}
+		}
+	}
+
+	// .terminal__box
+	&__box {
+		min-height: 0;
+	}
+
+	// .terminal__body
+	&__body {
+		display: flex;
+		padding: 0 2rem;
+	}
+
+	// .terminal__column
+	&__column {
+		&:nth-child(1) {
+			flex: max-content;
+		}
+		&:nth-child(2) {
+			background: $background-active-bar;
+			flex: 0 1 auto;
+		}
+		&:nth-child(3) {
+			flex: max-content;
+		}
+	}
+
+	&._open {
+		opacity: 1;
+		border-top: 1px solid $blue-light;
+		// grid-template-rows: 1fr;
+	}
+}
+
+.editor-gutter {
+	padding: 2rem 0;
+
+	// .editor-gutter__nubmber
+
+	&__nubmber {
+		padding: 0 2rem;
+		text-align: right;
+		width: 5rem;
+		color: $font-comment-collor;
+	}
+
+	// .editor-gutter__nubmber--active
+	&__nubmber--active {
+		color: $selected-color;
+	}
+}

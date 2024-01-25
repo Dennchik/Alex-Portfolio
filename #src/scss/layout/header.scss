@@ -1,0 +1,240 @@
+.header-menu {
+	// .header-menu__column
+	&__column {
+		padding: 0.2rem 0;
+		@include flex-align-center-justify-center;
+	}
+
+	// .header-menu__logo
+	&__logo {
+		height: 2.6rem;
+		width: 4rem;
+		background: url('../img/header/logo.png') center / contain no-repeat;
+		@include _690 {
+		}
+	}
+
+	// .header-menu__search
+	&__search {
+		height: 100%;
+		padding: 0.2rem 0;
+		@include flex-align-center;
+	}
+
+	// .header-menu__arrow-search
+	&__arrow-search {
+		text-align: center;
+		width: 7rem;
+		height: 100%;
+		@include flex-align-center;
+		.icon-angle-right,
+		.icon-angle-left {
+			font-size: 1.4rem;
+		}
+	}
+
+	// .header-menu__items-search
+	&__items-search {
+		text-align: center;
+		font-size: 1.4rem;
+		height: 100%;
+		width: 28rem;
+		border: 1px solid $border-color;
+		border-radius: 0.5rem;
+		background: $background-selected;
+		color: $font-comment-collor;
+	}
+}
+
+.header-content {
+	// .header-content__header
+	&__header {
+		display: grid;
+		grid-template-columns: 4rem 1fr;
+		border-bottom: 1px solid $border-color;
+	}
+
+	// .header-content__menu
+	&__menu {
+		display: grid;
+		grid-template-columns: max-content 1fr max-content;
+		white-space: nowrap;
+		letter-spacing: 1.2px;
+		color: $blue-light;
+	}
+
+	// .header-content__menu-column
+	&__menu-column {
+		@include flex-align-center;
+
+		&:nth-child(2) {
+			border: 1px $border-color;
+			border-style: none solid;
+		}
+
+		&:nth-child(4) {
+			margin: 0 0.5rem;
+			@include _min-690 {
+				display: none;
+			}
+		}
+	}
+
+	// .header-content__item-btn
+	&__item-btn {
+		padding: 0 2rem;
+		height: 100%;
+		@extend .grad_underline;
+		&._active {
+			background-size:
+				0 1px,
+				calc(100% - 0px) 1px;
+		}
+	}
+
+	// .header-content__logo
+	&__name {
+		text-shadow: #fc0 1px 0 10px;
+		padding: 0 4rem 0 4rem;
+		height: $headerHeight;
+		font-size: 1.4rem;
+		line-height: 285.714286%; /* 4rem/1.4 */
+	}
+
+	// .header-content__link
+	&__link {
+		height: 100%;
+		width: 100%;
+		@include flex-align-center;
+	}
+}
+
+.menu-top {
+	@include _690 {
+		position: absolute;
+		display: inline-block;
+		width: 100%;
+		top: 7.1rem;
+		opacity: 0;
+		height: calc(100% - 10.8rem);
+		transform: translate(-100%, 0);
+		transition: all 0.4s ease-in-out;
+		&.opened-menu {
+			z-index: 9;
+			opacity: 1;
+			transform: translate(0, 0);
+			// height: clac(100% - 12rem);
+			background: $background-editor;
+		}
+	}
+
+	// .menu-top__items
+	&__items {
+		height: 100%;
+		cursor: pointer;
+		@include flex-align-center;
+		@include _690 {
+			padding: 2rem 0;
+			display: block;
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+
+	// .menu-top__item-btn
+	&__item-btn {
+		height: 100%;
+		cursor: pointer;
+		padding: 0 2rem;
+
+		@extend .grad_underline;
+		i {
+			font-size: 1.8rem;
+			margin-right: 1rem;
+		}
+
+		@include _690 {
+			height: 4rem;
+			margin: 0 1rem;
+			padding-left: 1rem;
+			border-bottom: 1px solid $border-color;
+			&:not(:last-child) {
+				margin-bottom: 1rem;
+				line-height: 250%; /* 4rem/1.6 */
+			}
+		}
+
+		.icon-hand-shake {
+			color: $blue-light;
+		}
+		.icon-books-library {
+			color: $blue-light;
+		}
+
+		.icon-folder-directory {
+			color: $blue-light;
+		}
+		.icon-information {
+			color: $blue-light;
+		}
+
+		// .menu-top__item-btn _active
+		&._active {
+			position: relative;
+			background-size:
+				0 1px,
+				calc(100% - 0px) 1px;
+			@include _min-690 {
+				color: $selected-color;
+				.icon-hand-shake,
+				.icon-books-library,
+				.icon-folder-directory,
+				.icon-information {
+					color: $orange;
+				}
+				&::after {
+					position: absolute;
+					left: 0;
+					content: '';
+					width: 100%;
+					height: 100%;
+					background: $background-selected;
+				}
+			}
+			.folder-open-directory {
+				display: block;
+				fill: $orange;
+			}
+			.folder-directory {
+				display: none;
+			}
+		}
+		@include _min-690 {
+			&:not(:last-child) {
+				border-right: 1px solid $border-color;
+			}
+		}
+
+		@include flex-align-center;
+	}
+	// .menu-top__svg-img
+	&__svg-img {
+		width: 2.5rem;
+		height: 4rem;
+		fill: $blue-light-not-active;
+		margin-right: 1rem;
+		&.folder-open-directory {
+			display: none;
+		}
+	}
+}
+
+.burger-bottom {
+	z-index: 10;
+
+	// .burger-bottom__items
+	&__items {
+		border: 1px $border-color;
+		border-style: none solid;
+	}
+}

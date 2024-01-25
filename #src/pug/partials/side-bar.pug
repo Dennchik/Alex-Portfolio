@@ -1,0 +1,53 @@
+.side-bar(data-action)
+	.active-bar._active-bar
+		._items
+			._items-top
+				._item
+					span 📑
+				._sub-item 
+					span
+						//- +iconfont('folder-closed-o')
+				._sub-item 
+					span
+						+iconfont('bookmark-o')
+
+			._items-bottom 
+				._sub-item 
+					span 
+						+iconfont('search')
+				._item.-control
+					span 
+						+iconfont('cogs-gear')
+
+	.menu._menu
+		._body
+			._parent
+				| menu - 1 lorem Lorem 
+			._parent
+				| menu - 2 lorem Lorem 
+			._parent
+				| menu - 3 lorem Lorem 
+		.setting-menu._settings
+			._wrapper 
+				ul._list 
+					li
+						a._link(href="#") Параметры
+
+
+				ul._list
+					li._parent 
+						a._link.-sub-link(href="#") Темы
+							+iconfont('angle-right')
+						.sub-menu._sub-menu
+							ul._list 
+								li
+									a._link(href="#") Светлая
+								li
+									a._link(href="#") Темная 
+								li
+									a._link(href="#") Настраиваемая
+					li 
+						a._link(href="#") Git - Hub
+				ul._list
+					li 
+						a._link(href="#") Проекты (в работе)		

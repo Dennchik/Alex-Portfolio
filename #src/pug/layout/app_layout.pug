@@ -1,0 +1,42 @@
+include ../includes/mixins
+include ../includes/variables.pug
+doctype html
+html(lang="ru")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		meta(name="description" content="Краткое описание документа")
+		meta(name="keywords" content="keywords-ключевые слова для поиска")
+		link(rel="icon" type="image/icon" href="@@webRoot/img/icons/xfire.ico")
+		link(rel="stylesheet" type="text/css" href="@@webRoot/css/style.min.css" ) 
+
+		script(defer="defer" type="text/javascript" src="@@webRoot/js/main.min.js")
+
+
+		block title
+		- var text
+			title #{text}
+
+	body  
+		include ../modules/loading
+		div(class="wrapper")
+			block page
+				.page
+					._body._container
+						._desktop
+							header._header
+								block header
+							main.main-content
+								._body
+									aside._side-bar
+										block side-bar
+									._editor
+										block editor
+							footer._footer
+								block footer 
+								
+
+
+
+
+

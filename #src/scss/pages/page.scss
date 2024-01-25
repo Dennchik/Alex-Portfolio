@@ -1,0 +1,89 @@
+.page {
+	// .page__body
+	&__body {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+	}
+
+	// .page__desktop
+	&__desktop {
+		overflow: hidden;
+		position: relative;
+		height: 74rem;
+		display: flex;
+		flex-direction: column;
+		border-radius: 0.7rem;
+		border: 1px solid $blue-light-not-active;
+		box-shadow: $boxShadow;
+
+		@include _690 {
+			min-height: calc(100vh - 2.2rem);
+			overflow: hidden;
+		}
+	}
+
+	// .page__header
+	&__header {
+		height: calc($headerHeight * 2);
+		box-shadow: $boxShadowSecond;
+		background: $background-thumb;
+		z-index: 9;
+	}
+
+	// .page__content
+	&__content {
+		flex: 0 1 100%;
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+	}
+
+	// .page__footer
+	&__footer {
+		height: $footerHeight;
+		background: $background-side-bar;
+		border-top: 1px solid $border-color;
+		color: $blue-light;
+		z-index: 3;
+		@include flex-align-center;
+	}
+}
+
+.editor {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	// overflow: hidden;
+	// overflow-y: auto;
+
+	&::-webkit-scrollbar {
+		width: 0;
+	}
+
+	// .editor__section
+	&__section {
+		height: 100%;
+		padding: 0 1.5rem;
+		&:nth-child(1) {
+			position: relative;
+		}
+	}
+
+	// .editor__terminal
+	&__terminal {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		background: $background-terminal;
+		z-index: 10;
+		&._show {
+			// min-height: 70%;
+			grid-template-rows: 1fr;
+			// grid-template-rows: 70%;
+		}
+	}
+}

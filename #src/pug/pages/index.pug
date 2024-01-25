@@ -1,0 +1,26 @@
+extends ../layout/app_layout
+
+block title
+	- var text='Alex - WebDev'
+
+block header 
+	include ../layout/header
+
+block side-bar
+	include ../partials/side-bar
+
+block editor
+	.editor
+		section._section._active
+			.bgblurs-box
+				+svg('green-shadow','bg-blurs', 'bgblurs-box__top')
+				+svg('blue-shadow','bg-blurs','bgblurs-box__bottom')
+			include ../partials/section-hello
+		section._section
+			include ../partials/section-scills
+		section._section
+			include ../partials/section-project
+		section._terminal
+			include ../partials/section-terminal
+block footer 
+	include ../layout/footer

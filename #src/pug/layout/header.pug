@@ -1,0 +1,38 @@
+.header-content
+	.header-menu._header 
+		._column
+			._logo
+		._column
+			._search 
+				._arrow-search  
+					+iconfont('arrow-left')
+					+iconfont('arrow-right')
+				._items-search
+					|🔎 Portfolio
+	._menu 
+		._menu-column 
+			._name Александр Васильев 
+		.menu-top._menu-column
+			._items
+				._item-btn._hello._active
+					+iconfont('hand-shake')
+					+btn-link('button','_hello', 'header-content__link')
+					//- +iconfont('angles-down-solid')
+				._item-btn._scills
+					+iconfont('books-library')
+					+btn-link('button','_scills', 'header-content__link') 
+				._item-btn._project 
+					+svg('folder-directory', 'menu-top__svg-img')
+					+svg('folder-open-directory', 'menu-top__svg-img')
+					+btn-link('.button','_project', 'header-content__link') 
+		._menu-column 
+			._item-btn
+				+btn-link('.button','contact me _', 'header-content__link') 
+		._menu-column 
+			.burger-bottom
+				._items
+					svg(viewBox="10 6 44 36")
+						path(d="M19,15 L45,15 C70,15 58,-2 49.0177126,7 L19,37")
+						path(d="M19,24 L45,24 C61.2371586,24 57,49 41,33 L32,24")
+						path(d="M45,33 L19,33 C-8,33 6,-2 22,14 L45,37")
+

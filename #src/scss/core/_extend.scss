@@ -1,0 +1,44 @@
+.grad_underline {
+	background: linear-gradient(to left, transparent, transparent),
+		linear-gradient(to left, $background-selected, $blue-light);
+	background-size:
+		100% 1px,
+		0 1px;
+	background-position:
+		100% 100%,
+		0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 400ms;
+
+	&._active {
+		// background-size:
+		// 	0 1px,
+		// 	calc(100% - 0px) 1px;
+	}
+}
+.gradient-box {
+	background: linear-gradient(to right, #0b486bbd, #0b486b, #0b486bbd);
+	// url('../img/header/bggrid.png') center / 100% 100% no-repeat;
+}
+.gradient-top-link {
+	text-shadow: $orange 1px 0 10px;
+	background: linear-gradient(to bottom, #008192, #90effc, #008192 100%);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.gradient {
+	// background: linear-gradient(to bottom right, #000b16, #00f7ff85);
+
+	background: linear-gradient(to right bottom, #000000, #191b27);
+}
+
+.icon-style {
+	border: 1px $border-color;
+	border-style: none solid;
+	height: 100%;
+	padding: 0 1.5rem;
+	@include flex-align-center;
+}
