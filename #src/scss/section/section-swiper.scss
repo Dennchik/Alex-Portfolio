@@ -3,7 +3,7 @@
 	&__body {
 		position: relative;
 		height: 0;
-		min-height: 130%;
+		min-height: 120%;
 		display: flex;
 		justify-content: center;
 	}
@@ -20,6 +20,7 @@
 		&.swiper-slide-active {
 			cursor: pointer;
 			opacity: 1;
+			pointer-events: all;
 		}
 	}
 
@@ -65,6 +66,7 @@
 	opacity: 0;
 	transition: all 0.9s ease 0s;
 
+	// .modal__image
 	&__image {
 		border: 1px solid red;
 		-webkit-animation-name: zoom;
@@ -75,6 +77,7 @@
 		display: block;
 		width: 80%;
 		max-width: 700px;
+		pointer-events: none;
 	}
 
 	&._show {

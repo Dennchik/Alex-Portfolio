@@ -5,15 +5,20 @@ export default function modal() {
 		let img = mainSlide.querySelector("img");
 		img.onclick = function (e) {
 			let target = e.target;
-			let sourse = target.closest('.content-mainslide__image').querySelector('source').srcset;
-			let modalImg = modal.querySelector("#image");
-			modal.classList.add('_show');
-			modalImg.src = this.src;
-			modal.querySelector('source').srcset = sourse;
-			var span = modal.querySelector("span");
-			span.onclick = function () {
-				modal.classList.remove('_show');
-			};
+			if (!target.closest('.mainslide__slide').classList.contains('swiper-slide-active')) {
+				console.log('not active');
+				e.preventDefault();
+			} else {
+				let sourse = target.closest('.content-mainslide__image').querySelector('source').srcset;
+				let modalImg = modal.querySelector("#image");
+				modal.classList.add('_show');
+				modalImg.src = this.src;
+				modal.querySelector('source').srcset = sourse;
+				var span = modal.querySelector("span");
+				span.onclick = function () {
+					modal.classList.remove('_show');
+				};
+			}
 		};
 	});
 }
