@@ -63,7 +63,7 @@ a {
 a:hover {
 	text-decoration: none;
 	@include _min-690 {
-		color: $blue-light-not-active;
+		// color: $blue-light-not-active;
 	}
 }
 

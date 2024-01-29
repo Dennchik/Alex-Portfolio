@@ -737,11 +737,6 @@
     content: $icon-tree-branches;
   }
 }
-.icon-tree1 {
-  &:before {
-    content: $icon-tree1;
-  }
-}
 .icon-droplet {
   &:before {
     content: $icon-droplet;
@@ -1297,39 +1292,34 @@
     content: $icon-fonticons;
   }
 }
-.icon-user-o {
+.icon-paper-clip {
   &:before {
-    content: $icon-user-o;
+    content: $icon-paper-clip;
   }
 }
-.icon-sign-out {
+.icon-cut {
   &:before {
-    content: $icon-sign-out;
+    content: $icon-cut;
   }
 }
-.icon-sign-in {
+.icon-copy-files-o {
   &:before {
-    content: $icon-sign-in;
+    content: $icon-copy-files-o;
   }
 }
-.icon-angle-left {
+.icon-check-square-o {
   &:before {
-    content: $icon-angle-left;
+    content: $icon-check-square-o;
   }
 }
-.icon-angle-right {
+.icon-square-o {
   &:before {
-    content: $icon-angle-right;
+    content: $icon-square-o;
   }
 }
-.icon-angle-up {
+.icon-envelope {
   &:before {
-    content: $icon-angle-up;
-  }
-}
-.icon-angle-down {
-  &:before {
-    content: $icon-angle-down;
+    content: $icon-envelope;
   }
 }
 .icon-file {
@@ -1362,6 +1352,101 @@
     content: $icon-exchange;
   }
 }
+.icon-book {
+  &:before {
+    content: $icon-book;
+  }
+}
+.icon-window-close {
+  &:before {
+    content: $icon-window-close;
+  }
+}
+.icon-expeditedssl {
+  &:before {
+    content: $icon-expeditedssl;
+  }
+}
+.icon-angle-left {
+  &:before {
+    content: $icon-angle-left;
+  }
+}
+.icon-angle-right {
+  &:before {
+    content: $icon-angle-right;
+  }
+}
+.icon-angle-up {
+  &:before {
+    content: $icon-angle-up;
+  }
+}
+.icon-angle-down {
+  &:before {
+    content: $icon-angle-down;
+  }
+}
+.icon-fire-resistance {
+  &:before {
+    content: $icon-fire-resistance;
+  }
+}
+.icon-folder-closed {
+  &:before {
+    content: $icon-folder-closed;
+  }
+}
+.icon-folder-open {
+  &:before {
+    content: $icon-folder-open;
+  }
+}
+.icon-folder-closed-o {
+  &:before {
+    content: $icon-folder-closed-o;
+  }
+}
+.icon-folder-open-o {
+  &:before {
+    content: $icon-folder-open-o;
+  }
+}
+.icon-bookmark-lg {
+  &:before {
+    content: $icon-bookmark-lg;
+  }
+}
+.icon-bookmark-o {
+  &:before {
+    content: $icon-bookmark-o;
+  }
+}
+.icon-black-tie {
+  &:before {
+    content: $icon-black-tie;
+  }
+}
+.icon-phone {
+  &:before {
+    content: $icon-phone;
+  }
+}
+.icon-user-o {
+  &:before {
+    content: $icon-user-o;
+  }
+}
+.icon-sign-out {
+  &:before {
+    content: $icon-sign-out;
+  }
+}
+.icon-sign-in {
+  &:before {
+    content: $icon-sign-in;
+  }
+}
 .icon-cloud-download {
   &:before {
     content: $icon-cloud-download;
@@ -1370,36 +1455,6 @@
 .icon-cloud-upload {
   &:before {
     content: $icon-cloud-upload;
-  }
-}
-.icon-paper-clip {
-  &:before {
-    content: $icon-paper-clip;
-  }
-}
-.icon-cut {
-  &:before {
-    content: $icon-cut;
-  }
-}
-.icon-copy-files-o {
-  &:before {
-    content: $icon-copy-files-o;
-  }
-}
-.icon-check-square-o {
-  &:before {
-    content: $icon-check-square-o;
-  }
-}
-.icon-square-o {
-  &:before {
-    content: $icon-square-o;
-  }
-}
-.icon-phone {
-  &:before {
-    content: $icon-phone;
   }
 }
 .icon-power-off {
@@ -1440,11 +1495,6 @@
 .icon-toggle-on {
   &:before {
     content: $icon-toggle-on;
-  }
-}
-.icon-black-tie {
-  &:before {
-    content: $icon-black-tie;
   }
 }
 .icon-rub {
@@ -1492,11 +1542,6 @@
     content: $icon-users-tie;
   }
 }
-.icon-envelope {
-  &:before {
-    content: $icon-envelope;
-  }
-}
 .icon-cogs-gears {
   &:before {
     content: $icon-cogs-gears;
@@ -1520,41 +1565,6 @@
 .icon-globe {
   &:before {
     content: $icon-globe;
-  }
-}
-.icon-folder-closed {
-  &:before {
-    content: $icon-folder-closed;
-  }
-}
-.icon-folder-open {
-  &:before {
-    content: $icon-folder-open;
-  }
-}
-.icon-folder-closed-o {
-  &:before {
-    content: $icon-folder-closed-o;
-  }
-}
-.icon-folder-open-o {
-  &:before {
-    content: $icon-folder-open-o;
-  }
-}
-.icon-book {
-  &:before {
-    content: $icon-book;
-  }
-}
-.icon-expeditedssl {
-  &:before {
-    content: $icon-expeditedssl;
-  }
-}
-.icon-window-close {
-  &:before {
-    content: $icon-window-close;
   }
 }
 .icon-visa {
@@ -1650,20 +1660,5 @@
 .icon-resistance {
   &:before {
     content: $icon-resistance;
-  }
-}
-.icon-fire-resistance {
-  &:before {
-    content: $icon-fire-resistance;
-  }
-}
-.icon-bookmark-lg {
-  &:before {
-    content: $icon-bookmark-lg;
-  }
-}
-.icon-bookmark-o {
-  &:before {
-    content: $icon-bookmark-o;
   }
 }

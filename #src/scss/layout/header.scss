@@ -94,7 +94,7 @@
 
 	// .header-content__logo
 	&__name {
-		text-shadow: #fc0 1px 0 10px;
+		text-shadow: $orange 1px 0 10px;
 		padding: 0 4rem 0 4rem;
 		height: $headerHeight;
 		font-size: 1.4rem;
@@ -123,7 +123,6 @@
 			z-index: 9;
 			opacity: 1;
 			transform: translate(0, 0);
-			// height: clac(100% - 12rem);
 			background: $background-editor;
 		}
 	}
@@ -146,8 +145,15 @@
 		height: 100%;
 		cursor: pointer;
 		padding: 0 2rem;
+		color: $blue-light-not-active;
 
-		@extend .grad_underline;
+		&:hover {
+			color: $blue-light;
+			.folder-directory {
+				fill: $blue-light;
+			}
+		}
+
 		i {
 			font-size: 1.8rem;
 			margin-right: 1rem;
@@ -164,34 +170,16 @@
 			}
 		}
 
-		.icon-hand-shake {
-			color: $blue-light;
-		}
-		.icon-books-library {
-			color: $blue-light;
-		}
-
-		.icon-folder-directory {
-			color: $blue-light;
-		}
-		.icon-information {
-			color: $blue-light;
-		}
-
 		// .menu-top__item-btn _active
 		&._active {
 			position: relative;
 			background-size:
 				0 1px,
 				calc(100% - 0px) 1px;
+
 			@include _min-690 {
-				color: $selected-color;
-				.icon-hand-shake,
-				.icon-books-library,
-				.icon-folder-directory,
-				.icon-information {
-					color: $orange;
-				}
+				color: $blue-light;
+
 				&::after {
 					position: absolute;
 					left: 0;
@@ -203,7 +191,7 @@
 			}
 			.folder-open-directory {
 				display: block;
-				fill: $orange;
+				fill: $blue-light;
 			}
 			.folder-directory {
 				display: none;
@@ -215,8 +203,17 @@
 			}
 		}
 
+		@extend .grad_underline;
 		@include flex-align-center;
 	}
+
+	// .menu-top__link
+	&__link {
+		height: 100%;
+		width: 100%;
+		@include flex-align-center;
+	}
+
 	// .menu-top__svg-img
 	&__svg-img {
 		width: 2.5rem;

@@ -29,7 +29,7 @@
 		height: calc($headerHeight * 2);
 		box-shadow: $boxShadowSecond;
 		background: $background-thumb;
-		z-index: 9;
+		z-index: 8;
 	}
 
 	// .page__content
@@ -56,8 +56,8 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	// overflow: hidden;
-	// overflow-y: auto;
+	overflow: hidden;
+	overflow-y: auto;
 
 	&::-webkit-scrollbar {
 		width: 0;

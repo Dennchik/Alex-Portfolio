@@ -66,7 +66,6 @@
 	&._open {
 		opacity: 1;
 		border-top: 1px solid $blue-light;
-		// grid-template-rows: 1fr;
 	}
 }
 
@@ -74,7 +73,6 @@
 	padding: 2rem 0;
 
 	// .editor-gutter__nubmber
-
 	&__nubmber {
 		padding: 0 2rem;
 		text-align: right;

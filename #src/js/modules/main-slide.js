@@ -1,7 +1,6 @@
-//* import Swiper bundle with all modules installed 
-import '../assets/swiper-layout';
 import swiperLayout from "../assets/swiper-layout";
 swiperLayout();
+//* import Swiper bundle with all modules installed 
 import Swiper from 'swiper/bundle';
 
 //* import styles bundle
@@ -21,6 +20,7 @@ export default function mainSlide() {
 			slidesPerView: 'auto',
 			observer: true,
 			observeParents: true,
+			grabCursor: true,
 			// allowTouchMove: false,
 			// freeMode: true,
 
@@ -29,10 +29,13 @@ export default function mainSlide() {
 
 			//? If we need pagination
 			pagination: {
-				el: '.swiper-pagination',
-				dynamicBullets: true,
+				el: '.hello-page__pagination-number',
+				// dynamicBullets: true,
 				clickable: true,
 				loop: true,
+				renderBullet: function (index, className) {
+					return '<span class="' + className + '">' + (index + 1) + "</span>";
+				},
 			},
 
 			// navigation: {

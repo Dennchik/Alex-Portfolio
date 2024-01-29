@@ -11,7 +11,7 @@ module.exports = {
 	webpack: {
 		mode: isProd ? 'production' : 'development',
 		entry: {
-			// app: './#src/js/app.js',
+			script: './#src/js/script.js',
 			main: './#src/js/main.js'
 		},
 		output: {
