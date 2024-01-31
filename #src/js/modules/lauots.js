@@ -1,10 +1,10 @@
-import ItcCollapse from '../assets/collapse';
 import menuKeyframes from "./animetion.js";
 import { myname, timeLine, timeSlide } from "./animetion.js";
 // -----------------------------------------------------------------------------
 const $ = {
 	contact: document.querySelector('.header-content__item-btn'),
-	elTerminal: document.querySelector('.terminal'),
+	// elTerminal: document.querySelector('.terminal'),
+	elTerminal: document.querySelector('.editor'),
 	menuBody: document.querySelector('.menu__body'),
 	tablinks: document.querySelectorAll('.menu-top__item-btn'),
 	tabcontents: document.querySelectorAll('.editor__section'),
@@ -153,18 +153,14 @@ if (isMobile.any()) {
 }
 // -----------------------------------------------------------------------------
 const _toggleTerminal = (el) => {
-	const collapse = new ItcCollapse(el.querySelector('._collapse'));
 	if (el.classList.contains('_open')) {
 		el.classList.remove('_open');
-		// ItcCollapse(el);
-		collapse.toggle();
+		// collapse.toggle();
 	} else {
 		el.classList.add('_open');
-		// ItcCollapse(el);
-		collapse.toggle();
+		// collapse.toggle();
 	}
 };
-
 
 function openSwitch(target) {
 	switch (true) {

@@ -1,51 +1,64 @@
 .hello-page {
 	width: 100%;
 	height: 100%;
-	display: flex;
+	display: grid;
+	grid-template-rows: 100%;
 	gap: 4rem;
-
+	grid-template-columns: 1fr 6rem 1fr;
 	@include _690 {
-		flex-direction: column;
+		grid-template-columns: 1fr 6rem;
+		grid-template-rows: 100% 100%;
 	}
 
 	// .hello-page__column
 	&__column {
-		flex: 0 1 50%;
 		display: flex;
 		flex-wrap: wrap;
-		height: 0;
 		min-height: 100%;
 
 		&:nth-child(1) {
+			height: 100%;
+			justify-content: end;
 			padding: 2.5rem 0;
+			justify-content: center;
 			@include _min-690 {
 				justify-content: flex-end;
 			}
-
-			overflow: hidden;
-			justify-content: center;
+			@include _690 {
+				grid-column: 1 / 3;
+			}
 		}
 
 		&:nth-child(2) {
-			background-color: $background-active-bar;
-			flex: 0 1 6rem;
 			border: 1px $border-color;
 			border-style: none solid;
 			justify-content: center;
+			background-color: $background-active-bar;
+			@include _690 {
+				grid-column: -2 / -1;
+			}
+
 			.hello-page__row {
 				width: min-content;
 			}
 		}
 
 		&:nth-child(3) {
+			position: relative;
+			z-index: 3;
 			@include _min-690 {
-				border: 1px solid red;
 				overflow: hidden;
 				justify-content: flex-start;
+				align-content: center;
+				.hello-page__row {
+					min-height: 125%;
+				}
 			}
 
 			@include _690 {
-				display: none;
+				grid-column: -3 / -2;
+				grid-row: 2 / 3;
+				justify-self: center;
 			}
 		}
 
@@ -56,9 +69,9 @@
 
 	//.hello-page__row
 	&__row {
-		// overflow-y: hidden;
 		position: relative;
-		width: 100%;
+		z-index: 3;
+		// width: 100%;
 		height: 100%;
 		display: flex;
 		justify-content: center;
@@ -92,29 +105,32 @@
 		color: $blue-light-not-active;
 		font-weight: 100;
 
-		.swiper-pagination-bullet-active {
-			transition: all 0.9s ease 0s;
+		.swiper-pagination-bullet {
+			cursor: pointer;
 			position: relative;
-			color: $blue-light;
-			text-shadow: $orange 1px 0 10px;
-			display: flex;
-			align-items: center;
-			font-weight: 500;
-			&::after {
+			@include flex-align-center-justify-center;
+			&::before {
 				content: '';
 				position: absolute;
-				transform: translate(-30%, 0);
 				width: 20px;
 				height: 20px;
 				border-radius: 50%;
 				background: #00ffff1e;
 				box-shadow: $boxShadow;
+				scale: 0;
+				transition: scale 0.5s ease 0s;
 			}
-
-			// @include flex-justify-center;s
 		}
-		.swiper-pagination-bullet {
-			cursor: pointer;
+
+		.swiper-pagination-bullet-active {
+			color: $orange;
+			text-shadow: $orange 1px 0 10px;
+			font-weight: 500;
+
+			&::before {
+				scale: 1;
+				transition: scale 0.5s ease 0s;
+			}
 		}
 	}
 
@@ -220,4 +236,3 @@
 		}
 	}
 }
-// -----------------------------------------------------------------------------

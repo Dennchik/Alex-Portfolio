@@ -1,4 +1,4 @@
-class ItcMoveEl {
+export default class dynamicAdaptive {
 	constructor() {
 		this._els = document.querySelectorAll('[data-move-el]');
 		this._data = [];
@@ -56,4 +56,4 @@ class ItcMoveEl {
 		position >= target.children.length ? target.append(el) : target.children[position].before(el);
 	}
 }
-new ItcMoveEl();
+// new dynamicAdaptive();

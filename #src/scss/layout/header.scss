@@ -66,6 +66,9 @@
 	// .header-content__menu-column
 	&__menu-column {
 		@include flex-align-center;
+		@include _690 {
+			justify-content: flex-end;
+		}
 
 		&:nth-child(2) {
 			border: 1px $border-color;
@@ -95,10 +98,13 @@
 	// .header-content__logo
 	&__name {
 		text-shadow: $orange 1px 0 10px;
-		padding: 0 4rem 0 4rem;
+		padding: 0 4rem;
 		height: $headerHeight;
 		font-size: 1.4rem;
 		line-height: 285.714286%; /* 4rem/1.4 */
+		@include _425 {
+			padding: 0 1rem;
+		}
 	}
 
 	// .header-content__link

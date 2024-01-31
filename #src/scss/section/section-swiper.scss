@@ -1,9 +1,7 @@
 .mainslide {
 	// .mainslide__body
 	&__body {
-		position: relative;
-		height: 0;
-		min-height: 120%;
+		min-height: 125%;
 		display: flex;
 		justify-content: center;
 	}
@@ -26,8 +24,7 @@
 
 	// .mainslide__content
 	&__content {
-		display: flex;
-		align-self: center;
+		// display: flex;
 	}
 }
 
@@ -53,10 +50,12 @@
 }
 
 .modal {
+	overflow: hidden;
+	overflow-y: auto;
 	display: none;
-	position: absolute;
+	position: fixed;
+	padding: 3rem 0;
 	z-index: 9;
-	padding-top: 100px;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -64,15 +63,15 @@
 	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.9);
 	opacity: 0;
-	transition: all 0.9s ease 0s;
+	// transition: all 0.9s ease 0s;
+	// animation-name: zoom;
+	// animation-duration: 0.6s;
 
 	// .modal__image
 	&__image {
-		border: 1px solid red;
-		-webkit-animation-name: zoom;
-		-webkit-animation-duration: 0.6s;
 		animation-name: zoom;
-		animation-duration: 0.6s;
+		animation-duration: 0.7s;
+		transition: all 0.7s ease 0s;
 		margin: auto;
 		display: block;
 		width: 80%;
@@ -81,25 +80,27 @@
 	}
 
 	&._show {
-		position: fixed;
 		display: block;
-		overflow: auto;
-		left: 0;
-		top: 0;
 		opacity: 1;
 	}
 
 	span {
-		// position: absolute;
+		animation-name: zoom;
+		animation-duration: 0.5s;
+		transition: all 0.5s ease 0s;
+		position: fixed;
+		top: 0;
+		right: 0;
 		top: 15px;
 		right: 35px;
-		color: #f1f1f1;
+		color: $blue-light-not-active;
 		font-size: 40px;
 		font-weight: bold;
-		transition: 0.3s;
+		transition: all 0.5s ease 0s;
+
 		&:hover,
 		&:focus {
-			color: #bbb;
+			color: $blue-light;
 			text-decoration: none;
 			cursor: pointer;
 		}

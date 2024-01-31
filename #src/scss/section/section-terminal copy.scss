@@ -1,0 +1,107 @@
+.terminal {
+	border: 3px solid #fff;
+	width: 100%;
+	max-height: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+
+	// .terminal__title
+	&__title {
+		width: 100%;
+		padding: 0 1.5rem;
+		@include flex-align-center;
+		background: $background-color-title;
+		height: $titleHeight;
+		border-bottom: 1px solid $border-color;
+	}
+
+	// .terminal__menu
+	&__title-col {
+		flex: 0 100%;
+		color: $blue-light;
+	}
+
+	// .terminal__close
+	&__close-btn {
+		cursor: pointer;
+
+		height: 2.7rem;
+		width: 2.7rem;
+		border-radius: 0.7rem;
+		color: $blue-light;
+		&:hover {
+			background: $background-selected;
+			color: $orange;
+		}
+		.icon-cross-middle {
+			&::before {
+				font-size: 2rem;
+				font-weight: lighter;
+			}
+		}
+	}
+
+	// .terminal__box
+	&__block {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		border: 3px solid violet;
+		min-height: 0;
+		overflow: hidden;
+		overflow-y: auto;
+		&._show {
+			.terminal__title {
+				position: sticky;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+
+	// .terminal__body
+	&__body {
+		background: $background-terminal;
+		max-height: 100%;
+		overflow: hidden;
+		overflow-y: auto;
+		display: flex;
+		padding: 0 2rem;
+	}
+	// .terminal__box-body
+	&__box-body {
+		display: flex;
+	}
+
+	// .terminal__column
+	&__column {
+		border: 2px solid blue;
+
+		&:nth-child(1) {
+			max-height: 100%;
+			flex: 0 1 50%;
+			justify-content: center;
+		}
+		&:nth-child(2) {
+			display: flex;
+			flex-direction: column;
+			display: block;
+			background: $background-active-bar;
+			flex: 0 1 50%;
+			display: flex;
+
+			.hello-page__column {
+				flex: 0 1 100%;
+				border: 1px solid greenyellow;
+				min-height: 100%;
+			}
+		}
+	}
+
+	&._open {
+		opacity: 1;
+		border-top: 1px solid $blue-light;
+	}
+}

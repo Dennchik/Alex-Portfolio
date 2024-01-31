@@ -19,12 +19,12 @@ block editor
 		section._section
 			include ../partials/section-scills
 		section._section
-			include ../partials/section-project
-		section._terminal
-			include ../partials/section-terminal
+			include ../partials/section-project 
+		include ../partials/section-terminal
 block footer 
 	include ../layout/footer
 block modal 
 	.modal 
-		span &times;
+		span 
+			+iconfont('cancel-circle')
 		img(src="#" id="image")._image

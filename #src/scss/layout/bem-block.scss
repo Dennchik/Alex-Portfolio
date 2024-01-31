@@ -1,8 +1,8 @@
 .editor > .editor__section:not(._active) {
 	display: none;
 }
-.terminal > ._collapse:not(._show) {
-	display: none;
+.terminal ._collapse:not(._show) {
+	flex: 0 1 0;
 }
 
 .bgblurs-box {
@@ -13,7 +13,7 @@
 	bottom: 0;
 	right: 0;
 	min-height: 100%;
-	z-index: 0;
+	z-index: 2;
 
 	@include _690 {
 		width: 100%;

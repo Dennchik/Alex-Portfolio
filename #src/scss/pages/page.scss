@@ -52,12 +52,23 @@
 }
 
 .editor {
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	overflow-y: auto;
+	position: relative;
+
+	&._open {
+		z-index: 2;
+		// grid-template-rows: 1fr;
+		.terminal__items {
+			max-height: 100%;
+		}
+	}
 
 	&::-webkit-scrollbar {
 		width: 0;
@@ -67,23 +78,15 @@
 	&__section {
 		height: 100%;
 		padding: 0 1.5rem;
-		&:nth-child(1) {
-			position: relative;
-		}
+		z-index: 1;
 	}
 
 	// .editor__terminal
 	&__terminal {
 		position: absolute;
-		bottom: 0;
+		top: 0;
 		left: 0;
 		width: 100%;
-		background: $background-terminal;
-		z-index: 10;
-		&._show {
-			// min-height: 70%;
-			grid-template-rows: 1fr;
-			// grid-template-rows: 70%;
-		}
+		height: 100%;
 	}
 }
