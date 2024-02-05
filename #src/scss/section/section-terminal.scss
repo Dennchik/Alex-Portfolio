@@ -5,30 +5,16 @@
 	width: 100%;
 	top: 0;
 	bottom: 0;
-	// border: 5px solid #00f7ff;
-	// min-height: 0%;
-	&._show {
-		min-height: 100%;
-		transition: max-height 0.5s ease-in-out;
-	}
-	&._open {
-		min-height: 100%;
-		z-index: 2;
-		// grid-template-rows: 1fr;
-		.terminal__items {
-			max-height: 100%;
-		}
-	}
 
 	// .terminal__items
 	&__items {
 		flex: 0 1 100%;
 		overflow: hidden;
-		overflow-y: auto;
 		height: auto;
 		max-height: 0;
 		z-index: 3;
 		transition: max-height 0.5s ease-in-out;
+
 		&::-webkit-scrollbar {
 			width: 3px;
 		}
@@ -50,23 +36,29 @@
 	&__title-col {
 		flex: 0 100%;
 		color: $blue-light;
+		.icon-terminal-arw {
+			justify-content: start;
+			font-size: 2.4rem;
+			opacity: 0.7;
+		}
 	}
 
 	// .terminal__close-btn
 	&__close-btn {
 		cursor: pointer;
-
 		height: 2.7rem;
 		width: 2.7rem;
 		border-radius: 0.7rem;
 		color: $blue-light;
+
 		&:hover {
 			background: $background-selected;
 			color: $orange;
 		}
+
 		.icon-cross-middle {
 			&::before {
-				font-size: 2rem;
+				font-size: 3rem;
 				font-weight: lighter;
 			}
 		}
@@ -76,33 +68,34 @@
 	&__body {
 		background: $background-terminal;
 		display: flex;
-		padding: 0 2rem;
+		padding-left: 2rem;
 		height: calc(100% - 3rem);
-		overflow: hidden;
-		overflow-y: auto;
 	}
 
 	// .terminal__column
 	&__column {
 		overflow: hidden;
 		max-height: 100%;
+
 		&:nth-child(1) {
 			flex: 0 1 100%;
-			// min-height: 125%;
 			padding-right: 1rem;
 			@include flex-justify-center;
 			.hello-page__column {
 				align-content: center;
 			}
+
 			.hello-page__row {
-				min-height: 110%;
+				min-height: 115%;
 			}
 		}
 
 		&:nth-child(2) {
 			background-color: $background-active-bar;
 			flex: 0 1 6rem;
+			border-left: 1px solid $border-color;
 		}
+
 		.hello-page__column {
 			padding: 0;
 		}

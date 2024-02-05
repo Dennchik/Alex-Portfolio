@@ -2,18 +2,25 @@ import menuKeyframes from "./animetion.js";
 import { myname, timeLine, timeSlide } from "./animetion.js";
 // -----------------------------------------------------------------------------
 const $ = {
-	contact: document.querySelector('.header-content__item-btn'),
-	// elTerminal: document.querySelector('.terminal'),
 	elTerminal: document.querySelector('.editor'),
 	menuBody: document.querySelector('.menu__body'),
-	tablinks: document.querySelectorAll('.menu-top__item-btn'),
-	tabcontents: document.querySelectorAll('.editor__section'),
-	sideBarSubItems: document.querySelectorAll('.active-bar__sub-item'),
+	openSide: document.querySelector('.move-content'),
+	settingMenu: document.querySelector('.setting-menu'),
 	menuParents: document.querySelectorAll('.menu__parent'),
+	tabcontents: document.querySelectorAll('.editor__section'),
+	tablinks: document.querySelectorAll('.menu-top__item-btn'),
 	selectItems: document.querySelectorAll('.active-bar__item'),
-	menuBody: document.querySelector('.menu__body'),
-	settingMenu: document.querySelector('.setting-menu')
+	contact: document.querySelector('.header-content__item-btn'),
+	sideBarSubItems: document.querySelectorAll('.active-bar__sub-item'),
+	itemContact: document.querySelector('.header-content__item-contact'),
+	bttns: document.querySelectorAll('.burger-bottom'),
+	bttn: document.querySelector('.burger-bottom'),
 };
+// -----------------------(isMobile - Side Bar Menu)----------------------------
+import isMobile from "../assets/Js-devise.js";
+if (isMobile.any()) {
+	_loop($.bttns, '_open');
+}
 // -------------------------(Collapse - Terminal)-------------------------------
 function tm_Layout() {
 	$.contact.addEventListener('click', () => {
@@ -24,7 +31,6 @@ function tm_Layout() {
 		$.contact.classList.remove('_active');
 		_toggleTerminal($.elTerminal);
 	};
-
 }
 // ----------------------------(Tabs - items)-----------------------------------
 function topMenu() {
@@ -44,13 +50,14 @@ function topMenu() {
 						// myname.play();
 						// timeLine.play();
 						break;
-					case target.contains('_about'):
-						// myname.play();
-						// timeLine.play();
-						break;
+					case target.contains('_project'):
+					// myname.play();
+					// timeLine.play();
 					default:
 						break;
 				}
+				_remove($.openSide, 'opened-menu');
+				_remove($.bttn, '_open');
 				const view_tablink = document.querySelector('.menu-top__item-btn._active');
 				const view_content = document.querySelector('.editor__section._active');
 				_toggleMenu(view_tablink);
@@ -64,116 +71,113 @@ function topMenu() {
 			});
 		}
 	}
-	const _toggleMenu = (el) => {
-		if (el.classList.contains('_active')) {
-			el.classList.remove('_active');
-		} else {
-			el.classList.add('_active');
-		}
-	};
 }
 // -----------------------------(Side - bar)------------------------------------
 function sideBar() {
 	const actions = document.querySelectorAll('[data-action]');
 	if (actions) {
-
-		for (const i in $.sideBarSubItems) {
-			const sideBarSubItem = $.sideBarSubItems[i];
-			const menuParent = $.menuParents[i];
-			if (Object.hasOwnProperty.call($.menuParents, i)) {
-				sideBarSubItem.addEventListener('click', function () {
-					let target = sideBarSubItem.classList;
-					const select_item = document.querySelector('._select');
-					const view_menu = document.querySelector('.menu__parent._select');
-					openSwitch(target);
-					_toggleItem(sideBarSubItem);
-					_toggleOpenElem(select_item, sideBarSubItem);
-					_toggleItem(menuParent);
-					_toggleOpenElem(view_menu, menuParent);
+		actions.forEach(action => {
+			for (let i = 0; i < $.selectItems.length; i++) {
+				const selectItem = $.selectItems[i];
+				selectItem.addEventListener('click', () => {
+					const select_item = action.querySelector('._select');
+					$.settingMenu.classList.toggle('_open');
+					if (selectItem.classList.contains('active-bar__item--control')) {
+						menuKeyframes($.settingMenu);
+					}
+					document.addEventListener('click', function (e) {
+						const target = e.target.classList;
+						to_close(target, $.settingMenu, '_open');
+					});
+					_toggleItem(selectItem);
+					if (select_item && select_item !== selectItem) {
+						_toggleItem(select_item);
+					} else if (select_item && select_item === selectItem) {
+						_toggleItem(selectItem);
+					}
+					for (let i = 0; i < $.menuParents.length; i++) {
+						const menuParent = $.menuParents[i];
+						_toggle(menuParent);
+					}
 				});
 			}
-		}
-
-		for (let i = 0; i < $.selectItems.length; i++) {
-			const selectItem = $.selectItems[i];
-			selectItem.addEventListener('click', () => {
-				const select_item = document.querySelector('._select');
-				$.settingMenu.classList.toggle('_open');
-				if ($.settingMenu.classList.contains('_open')) {
-					menuKeyframes($.settingMenu);
+			for (const i in $.sideBarSubItems) {
+				const sideBarSubItem = $.sideBarSubItems[i];
+				const menuParent = $.menuParents[i];
+				if (Object.hasOwnProperty.call($.menuParents, i)) {
+					sideBarSubItem.addEventListener('click', function () {
+						let target = sideBarSubItem.classList;
+						const select_item = action.querySelector('._select');
+						const view_menu = action.querySelector('.menu__parent._select');
+						openSwitch(target);
+						_toggleItem(sideBarSubItem);
+						_toggleOpenElem(select_item, sideBarSubItem);
+						_toggleItem(menuParent);
+						_toggleOpenElem(view_menu, menuParent);
+					});
 				}
-				document.addEventListener('click', function (e) {
-					const target = e.target.classList;
-					to_close(target, $.settingMenu, '_open');
-				});
-				_toggleItem(selectItem);
-				if (select_item && select_item !== selectItem) {
-					_toggleItem(select_item);
-				} else if (select_item && select_item === selectItem) {
-					_toggleItem(selectItem);
-				}
-				$.menuBody.style.width = "0";
-				for (let i = 0; i < $.menuParents.length; i++) {
-					const menuParent = $.menuParents[i];
-					_toggle(menuParent);
-				}
-			});
-		}
+			}
+		});
 	}
 };
-// ----------------------------(Parent - MEnu)----------------------------------
+// ----------------------------(Parent - Menu)----------------------------------
 function parentMenu() {
 	const menuParents = document.querySelectorAll('.setting-menu__parent');
 	for (let i = 0; i < menuParents.length; i++) {
 		const menuParent = menuParents[i];
 		menuParent.addEventListener('mouseenter', () => {
-			const settingsubMenu = menuParent.querySelector('.setting-menu__sub-menu');
+			const settingSubMenu = menuParent.querySelector('.setting-menu__sub-menu');
 			menuParent.classList.add('_active');
-			menuKeyframes(settingsubMenu);
+			menuKeyframes(settingSubMenu);
 		});
 		menuParent.addEventListener('mouseleave', () => {
 			menuParent.classList.remove('_active');
 		});
 	}
 }
-// ------------------------------(isMobile)-------------------------------------
-import isMobile from "../assets/Js-devise.js";
-if (isMobile.any()) {
-	console.log('Все работает');
-	const openSide = document.querySelector('.menu-top');
-	const btns = document.querySelectorAll('.burger-bottom');
-	for (let i = 0; i < btns.length; i++) {
-		btns[i].addEventListener('click', () => {
-			openSide.classList.toggle('opened-menu');
-			for (let i = 0; i < btns.length; i++) {
-				btns[i].classList.toggle('_open');
-			}
+// -----------------------------------------------------------------------------
+function _loop(els, md) {
+	for (let i = 0; i < els.length; i++) {
+		let el = els[i];
+		el.addEventListener('click', () => {
+			el.classList.toggle(md);
+			$.openSide.classList.toggle('opened-menu');
 		});
 	}
 }
-// -----------------------------------------------------------------------------
+const _remove = (el, md) => {
+	el.classList.remove(md);
+};
+const _toggleMenu = (el) => {
+	if (el.classList.contains('_active')) {
+		el.classList.remove('_active');
+	} else {
+		el.classList.add('_active');
+	}
+};
+const _toggleOpenElem = (el, elm) => {
+	if (el && el !== elm) {
+		_toggleItem(el);
+	}
+};
 const _toggleTerminal = (el) => {
 	if (el.classList.contains('_open')) {
 		el.classList.remove('_open');
-		// collapse.toggle();
 	} else {
 		el.classList.add('_open');
-		// collapse.toggle();
 	}
 };
-
-function openSwitch(target) {
+const openSwitch = (target) => {
 	switch (true) {
 		case target.contains('_select'):
-			$.menuBody.style.width = "0";
+			$.menuBody.classList.remove('_open');
 			break;
 		default:
-			$.menuBody.style.width = "20rem";
+			$.menuBody.classList.add('_open');
 			break;
 	}
 };
-
-function to_close(target, elm, md) {
+const to_close = (target, elm, md) => {
 	switch (true) {
 		case target.contains('icon-cogs-gear'):
 			break;
@@ -184,13 +188,11 @@ function to_close(target, elm, md) {
 			break;
 	}
 };
-
 const _toggle = (el) => {
 	if (el.classList.contains('_select')) {
 		el.classList.toggle('_select');
 	}
 };
-
 const _toggleItem = (el) => {
 	if (el.classList.contains('_select')) {
 		el.classList.remove('_select');
@@ -198,13 +200,5 @@ const _toggleItem = (el) => {
 		el.classList.add('_select');
 	}
 };
-
-const _toggleOpenElem = (el, elm) => {
-	if (el && el !== elm) {
-		_toggleItem(el);
-	}
-};
-
-
 // -----------------------------------------------------------------------------
 export { tm_Layout, sideBar, topMenu, parentMenu };

@@ -32,16 +32,10 @@
 
 [class*='_container'] {
 	/* border: groove; */
-
 	max-width: $maxWidthContainer;
 	box-sizing: content-box;
 	margin: 0 auto;
-	// padding: 1rem;
-
 	padding: 0 15px;
-	@include _min-690 {
-	}
-	// overflow-x: hidden;
 }
 
 [class*='grid-'] {
@@ -50,7 +44,6 @@
 
 [class*='icon-'] {
 	height: 100%;
-	// width: 4rem;
 	@include flex-align-center-justify-center;
 }
 

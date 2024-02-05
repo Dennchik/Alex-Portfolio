@@ -1,5 +1,12 @@
-import anime from '../assets/anime.js';
-
+import anime from '../application/anime.js';
+//* ------------------------------- Greed --------------------------------------
+// export let greed = anime({
+// 	delay: 1300,
+// 	direction: 'alternate',
+// 	targets: '.gutter-col',
+// 	translateX: 450,
+// 	delay: anime.stagger(100) // increase delay by 100ms for each elements.
+// });
 //* ------------------------------ My name -------------------------------------
 export let myname = anime({
 	targets: '.hello-page__my-name span',
@@ -15,9 +22,7 @@ export let myname = anime({
 });
 //* ---------------- Create a timeline with default parameters -----------------
 export let timeLine = anime.timeline({
-	// easing: 'easeOutExpo',
-
-	duration: 750,
+	duration: 1750,
 	delay: anime.stagger(100)
 });
 
@@ -37,17 +42,20 @@ timeLine
 		targets: '.hello-page__text',
 		opacity: 1,
 		translateX: [-700, 0],
-	}, 900) // relative offset
+	}, 900)
 	.add({
 		targets: '.hello-page__link',
 		opacity: 1,
 		translateX: [-700, 0],
-	}, 1200);
+	}, 1200)
+	.add({
+		targets: '.gutter-col',
+		opacity: 1,
+		translateX: [700, 0],
+	}, 500);
 
 
 export let timeSlide = anime.timeline({
-	// easing: 'easeInExpo',
-
 	duration: 2000,
 	delay: anime.stagger(100)
 });
@@ -77,7 +85,6 @@ const menuKeyframes = (el) => {
 			{ value: 1, duration: 900 }
 		],
 		easing: 'easeOutElastic(1, .8)',
-		// loop: true
 	});
 };
 

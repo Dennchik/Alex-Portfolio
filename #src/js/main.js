@@ -2,18 +2,8 @@ import loaded from './modules/loading.js';
 loaded('.preloader');
 import mainSlede from './modules/main-slide.js';
 mainSlede(
-	'.mainslide__body', //- init slide
-	'vertical', //- direction
-	'.hello-page__pagination-number', //- pagination 
-	true, //- loop
-	true, //- grabCursor
-	true, //- observer
-	true, //- autoHeight
-	true, //- mousewheel
-	true, //- centeredSlides
-	2,    //- initialSlide
-	30,   //- spaceBetween
-	7     //- slidesPerView
+	'.mainslide__body', //- init slide 
+	'.hello-page__pagination-number', //- pagination  
 	//- navigation: nextEl
 	//- navigation: prevEl
 	//- scrollbar

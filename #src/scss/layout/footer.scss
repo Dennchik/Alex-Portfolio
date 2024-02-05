@@ -16,13 +16,12 @@
 
 		.icon-telegram {
 			&::before {
-				// font-size: 1.4em;
 				@extend .icon-style;
 			}
 		}
+
 		.icon-git-hub-circle {
 			&::before {
-				font-size: 1.4rem;
 				@extend .icon-style;
 			}
 		}
@@ -33,5 +32,9 @@
 	&__items-link {
 		height: 100%;
 		padding-left: 1.5rem;
+		font-size: 1.8rem;
+		&:hover {
+			color: $blue-light-not-active;
+		}
 	}
 }

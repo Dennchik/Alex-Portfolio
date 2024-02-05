@@ -16,19 +16,18 @@
 		flex-direction: column;
 		border-radius: 0.7rem;
 		border: 1px solid $blue-light-not-active;
-		box-shadow: $boxShadow;
+		box-shadow: 1px 0px 5px $boxShadow;
 
 		@include _690 {
 			min-height: calc(100vh - 2.2rem);
-			overflow: hidden;
 		}
 	}
 
 	// .page__header
 	&__header {
 		height: calc($headerHeight * 2);
-		box-shadow: $boxShadowSecond;
-		background: $background-thumb;
+		box-shadow: 1px 1px 3px $boxShadowSecond;
+
 		z-index: 8;
 	}
 
@@ -58,13 +57,19 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-	overflow-y: auto;
-	position: relative;
+
+	.terminal__column {
+		opacity: 0;
+		transition: opacity 0.3s ease-in-out;
+	}
 
 	&._open {
 		z-index: 2;
-		// grid-template-rows: 1fr;
+
+		.terminal__column {
+			opacity: 1;
+		}
+
 		.terminal__items {
 			max-height: 100%;
 		}

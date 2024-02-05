@@ -13,21 +13,24 @@
 		._menu-column 
 			._name Александр Васильев 
 		.menu-top._menu-column
-			._items
+			._items(data-move-el="[{'bp-max': 690, 'index': 2, 'target': '.move-content'}]") 
 				._item-btn._hello._active
 					+iconfont('hand-shake')
-					+btn-link('button','_hello', 'menu-top__link')
-					//- +iconfont('angles-down-solid')
+					+btn-link('button','_hello', 'menu-top__link') 
 				._item-btn._scills
 					+iconfont('books-library')
 					+btn-link('button','_scills', 'menu-top__link') 
 				._item-btn._project 
 					+svg('folder-directory', 'menu-top__svg-img')
 					+svg('folder-open-directory', 'menu-top__svg-img')
-					+btn-link('.button','_project', 'menu-top__link') 
+					+btn-link('button','_project', 'menu-top__link') 
 		._menu-column 
-			._item-btn
-				+btn-link('.button','contact me _', 'header-content__link') 
+			._item-btn.-terminal  
+				+iconfont('terminal') 
+		._menu-column 
+			._item-contact 
+				+link('header-content__link', 'mailto:awdes@yandex.ru', '...@ say hello _')()
+					+iconfont('e-mail')
 		._menu-column 
 			.burger-bottom
 				._items

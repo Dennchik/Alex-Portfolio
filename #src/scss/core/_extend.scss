@@ -9,16 +9,9 @@
 		0 100%;
 	background-repeat: no-repeat;
 	transition: background-size 400ms;
-
-	&._active {
-		// background-size:
-		// 	0 1px,
-		// 	calc(100% - 0px) 1px;
-	}
 }
 .gradient-box {
 	background: linear-gradient(to right, #0b486bbd, #0b486b, #0b486bbd);
-	// url('../img/header/bggrid.png') center / 100% 100% no-repeat;
 }
 .gradient-top-link {
 	text-shadow: $orange 1px 0 10px;
@@ -30,8 +23,6 @@
 }
 
 .gradient {
-	// background: linear-gradient(to bottom right, #000b16, #00f7ff85);
-
 	background: linear-gradient(to right bottom, #000000, #191b27);
 }
 

@@ -6,15 +6,15 @@ mixin icons(href)
 mixin script(src)
 	script(defer="defer" type="text/javascript" src=src)
 
-//-! Mxin link & attributes----------------------
-mixin link(href, name)
-	a(href=href)&attributes(attributes) 
+//-! Mxin link & attributes --------------------------
+mixin link(id, href, name)
+	a(class=id, href=href)&attributes(attributes) 
 		span=name
-
-//-! Mxin link-------------------------------
+		block
+//-! Mxin link ---------------------------------------
 mixin btn-link(type, text, mod)
 	- m = mod || ''
-	a(class=mod + '' type=type)= text
+	a(class=mod + '' type=type)=text
 		block
 
 //-! mixin iconFont		
@@ -25,7 +25,7 @@ mixin iconfont(mod)
 mixin list-item(list, link, alink, name)
 	li(class=list)
 		a(class=link href=`${alink}`)=name
-//-! Sprite SVG ------------------------------
+//-! Sprite SVG --------------------------------------
 mixin svg(name, bem, mod)
 	- m = mod || ''
 		svg(class= name + ' '+ bem + ' '+ mod + ' ')
@@ -37,7 +37,7 @@ mixin svg(name, bem, mod)
 mixin set(key)
 	- blocks[key] = this.block
 
-//- mixin definition
+//- mixin definition ---------------------------------
 mixin layout
 	block
 	.page__main-content

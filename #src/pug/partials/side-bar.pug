@@ -2,38 +2,28 @@
 	.active-bar._active-bar
 		._items
 			._items-top
-				._item
+				._item._select 
 					span 📑
-				._sub-item 
-					span
-						//- +iconfont('folder-closed-o')
-				._sub-item 
-					span
-						+iconfont('bookmark-o')
-
-			._items-bottom 
-				._sub-item 
+				._sub-item  
 					span 
-						+iconfont('search')
-				._item.-control
-					span 
-						+iconfont('cogs-gear')
-
+			._items-bottom  
+				._item.-control 
+					+iconfont('cogs-gear')
 	.menu._menu
 		._body
 			._parent
-				| menu - 1 lorem Lorem 
-			._parent
-				| menu - 2 lorem Lorem 
-			._parent
-				| menu - 3 lorem Lorem 
+				ul._list 
+					li._list-item
+						._title Project
+						.menu-sub-items
+							a(target="_blank" href="http://dennchik.github.io/coronaWebsite/build/")._link coronaWebsite 
+							a(target="_blank" href="http://dennchik.github.io/Relvise/build/")._link Relvise
+							a(target="_blank" href="http://dennchik.github.io/Clear-fit/public/")._link Clear-fit
 		.setting-menu._settings
 			._wrapper 
 				ul._list 
 					li
-						a._link(href="#") Параметры
-
-
+						a._link(href="#") Параметры 
 				ul._list
 					li._parent 
 						a._link.-sub-link(href="#") Темы

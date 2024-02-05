@@ -7,43 +7,31 @@ import Swiper from 'swiper/bundle';
 // import 'swiper/css/bundle';
 // import 'swiper/css/pagination';
 // import 'swiper/css/scrollbar';
-export default function mainSlide(
-	mainslide,
-	direction,
-	pagination,
-	loop,
-	grabCursor,
-	observer,
-	autoHeight,
-	mousewheel,
-	centeredSlides,
-	initialSlide,
-	spaceBetween,
-	slidesPerView,
+export default function mainSlide(mainslide, pagination,
 	nextEl,
 	prevEl,
 	scrollbar,
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {
-			direction: direction,
+			direction: 'vertical',
 			speed: 800,
-			loop: loop,
-			grabCursor: grabCursor,
-			observer: observer,
-			autoHeight: autoHeight,
-			mousewheel: mousewheel,
-			centeredSlides: centeredSlides,
-			initialSlide: initialSlide,
-			spaceBetween: spaceBetween,
-			slidesPerView: slidesPerView,
+			loop: true,
+			grabCursor: true,
+			observer: true,
+			autoHeight: true,
+			mousewheel: true,
+			centeredSlides: true,
+			initialSlide: 2,
+			spaceBetween: 30,
+			slidesPerView: 7,
+			updateOnWindowResize: true,
 
 			pagination: {
 				el: pagination,
-				// dynamicBullets: true,
 				clickable: true,
 				renderBullet: function (index, className) {
-					return '<span class="' + className + '">' + (index + 1) + "</span>";
+					return '<span class="' + className + ' ' + 'el' + '">' + (index + 1) + "</span>";
 				},
 			},
 
