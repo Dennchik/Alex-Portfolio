@@ -42,51 +42,10 @@
 			width: 100%;
 
 			@include _min-490 {
-				width: 28rem;
+				width: 33.5rem;
 				box-shadow: 1px 0px 2px 0px #000;
 			}
 		}
-	}
-
-	// .menu__list
-	&__list {
-		position: relative;
-		padding: 1.5rem 0;
-		height: 100%;
-		border: 1px solid $blue-light-not-active;
-		border-right-style: none;
-		color: $font-comment-collor;
-		font-size: 1.6rem;
-		// &::before {
-		// 	content: '';
-		// 	width: 1px;
-		// 	height: 100%;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 1rem;
-		// 	background: linear-gradient(
-		// 		to bottom,
-		// 		$blue-light-not-active,
-		// 		$blue-light-not-active
-		// 	);
-		// 	background-position: center;
-		// 	background-size: 1px calc(100% - 5rem);
-		// 	background-repeat: no-repeat;
-		// }
-	}
-
-	// .menu__list-item
-	&__list-item {
-	}
-
-	// .menu__settings
-	&__title {
-		padding-left: 1.5rem;
-		line-height: 170%;
-		background-color: $background-selected;
-		border-radius: 0.3rem;
-		border: 1px solid $border-color;
-		border-style: solid none;
 	}
 
 	// .menu__settings
@@ -100,6 +59,229 @@
 		box-shadow: 3px 3px 10px #000;
 		border: 1px solid #0000005b;
 		border-radius: 0.4rem;
+	}
+}
+
+.parent-menu {
+	// .parent-menu__list
+	&__list {
+		position: relative;
+		padding: 1.5rem 0;
+		height: 100%;
+		border: 1px solid $blue-light-not-active;
+		border-right-style: none;
+		color: $font-comment-collor;
+		font-size: 1.6rem;
+	}
+
+	// .parent-menu__list-item
+	&__list-item {
+		display: grid;
+		grid-template-rows: max-content 0fr;
+		transition: all 0.4s ease-in-out;
+
+		&._open {
+			grid-template-rows: max-content 1fr;
+
+			.parent-menu__title {
+				color: $blue-light;
+			}
+
+			.icon-angles-right-solid {
+				transform: rotate(-90deg);
+				scale: -1;
+			}
+
+			.parent-menu__sub-menu {
+				background-size:
+					0 1px,
+					calc(95% - 0px) 1px;
+				transition: background-size 1s;
+				transition-property: background-size;
+				transition-duration: 0.3s;
+				transition-delay: 0.4s;
+			}
+		}
+	}
+
+	// .parent-menu__title
+
+	&__title {
+		cursor: pointer;
+		padding-left: 0.8rem;
+		line-height: 170%;
+		background-color: $background-selected;
+		border-radius: 0.3rem;
+		border: 1px solid $border-color;
+		border-style: solid none;
+		@include flex-align-center;
+
+		.icon-angles-right-solid {
+			scale: 1;
+			margin-right: 1rem;
+			transition: all 0.3s ease-in-out;
+			font-size: 1.2rem;
+		}
+	}
+
+	// .parent-menu__sub-menu
+	&__sub-menu {
+		margin: 0 1.4rem;
+		position: relative;
+		padding-bottom: 1rem;
+		min-height: 0;
+		overflow: hidden;
+		transition: min-height 0.4s ease-in-out;
+		background: linear-gradient(to left, transparent, transparent),
+			linear-gradient(to left, $border-color, $border-color);
+		background-size:
+			100% 1px,
+			0 1px;
+		background-position:
+			100% 100%,
+			0 100%;
+		background-repeat: no-repeat;
+
+		&::before {
+			content: '';
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			background: linear-gradient(to bottom, $border-color, $border-color);
+			background-position: center;
+			background-size: 1px calc(100% - 0.5rem);
+			background-repeat: no-repeat;
+		}
+	}
+
+	// .parent-menu__item
+	&__item {
+		gap: 2rem;
+		display: grid;
+		margin: 0.5rem 0;
+	}
+
+	// .parent-menu__link
+	&__link {
+		padding-left: 1rem;
+		line-height: 200%;
+		width: 95%;
+		border: 1px solid transparent;
+		@include flex-align-center;
+
+		span {
+			@include flex-align-center;
+			.icon-git-hub {
+				margin-right: 0.5rem;
+				color: $orange;
+				font-size: 1.2rem;
+			}
+		}
+
+		.icon-arrow-right {
+			margin-right: 1rem;
+		}
+
+		.icon-tab {
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			color: $blue-light;
+			background: $background-selected;
+			border: 1px solid $border-color;
+		}
+	}
+}
+
+.submenu-child {
+	display: grid;
+	grid-template-rows: max-content 0fr;
+	transition: all 0.3s ease-in-out;
+
+	&._open {
+		grid-template-rows: max-content 1fr;
+		.submenu-child__item {
+			background-size:
+				0 1px,
+				calc(95% - 0px) 1px;
+			transition: background-size 1s;
+			transition-property: background-size;
+			transition-duration: 0.3s;
+			transition-delay: 0.4s;
+		}
+	}
+
+	// .submenu-child__title
+	&__title {
+		gap: 1rem;
+		@include flex-align-center;
+	}
+
+	// .submenu-child__item
+	&__item {
+		margin: 0 1.4rem;
+		position: relative;
+		min-height: 0;
+		overflow: hidden;
+		transition: min-height 0.4s ease-in-out;
+		background: linear-gradient(to left, transparent, transparent),
+			linear-gradient(to left, $border-color, $border-color);
+		background-size:
+			100% 1px,
+			0 1px;
+		background-position:
+			100% 100%,
+			0 100%;
+		background-repeat: no-repeat;
+
+		&::before {
+			content: '';
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			background: linear-gradient(to bottom, $border-color, $border-color);
+			background-position: center;
+			background-size: 1px calc(100% - 0.5rem);
+			background-repeat: no-repeat;
+		}
+
+		gap: 2rem;
+		@include flex-align-center;
+	}
+
+	// .submenu-child__link
+	&__link {
+		padding-left: 1rem;
+		line-height: 200%;
+		width: 95%;
+		border: 1px solid transparent;
+		@include flex-align-center;
+
+		span {
+			@include flex-align-center;
+			.icon-git-hub {
+				margin-right: 0.5rem;
+				color: $orange;
+				font-size: 1.2rem;
+			}
+		}
+
+		.icon-arrow-right {
+			margin-right: 1rem;
+		}
+
+		.icon-tab {
+			margin-left: 1rem;
+		}
+
+		&:hover {
+			color: $blue-light;
+			background: $background-selected;
+			border: 1px solid $border-color;
+		}
 	}
 }
 
@@ -189,30 +371,7 @@
 		padding: 0.2rem;
 	}
 }
-.menu-sub-items {
-	margin-left: 2.5rem;
-	position: relative;
 
-	border-bottom: 1px solid $border-color;
-	&::before {
-		content: '';
-		width: 1px;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: -1rem;
-		background: linear-gradient(to bottom, $border-color, $border-color);
-		background-position: center;
-		background-size: 1px calc(100% - 0.5rem);
-		background-repeat: no-repeat;
-	}
-
-	// .sub-items__link
-	&__link {
-		line-height: 170%;
-		display: block;
-	}
-}
 .active-bar {
 	z-index: 2;
 
@@ -280,7 +439,7 @@
 	}
 }
 
-.sub-menu {
+.submenu-settings {
 	//. sub-menu__list
 	&__list {
 		border: 1px solid rgba(0, 0, 0, 0.3568627451);

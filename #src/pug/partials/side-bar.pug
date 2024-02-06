@@ -11,14 +11,58 @@
 					+iconfont('cogs-gear')
 	.menu._menu
 		._body
-			._parent
+			.parent-menu._parent
 				ul._list 
 					li._list-item
-						._title Project
-						.menu-sub-items
-							a(target="_blank" href="http://dennchik.github.io/coronaWebsite/build/")._link coronaWebsite 
-							a(target="_blank" href="http://dennchik.github.io/Relvise/build/")._link Relvise
-							a(target="_blank" href="http://dennchik.github.io/Clear-fit/public/")._link Clear-fit
+						._title
+							+iconfont('angles-right-solid')
+							span Projects 
+						._sub-menu
+							._item 
+								.submenu-child 
+									._title
+										a(target="_blank" href="http://dennchik.github.io/coronaWebsite/build/")._link coronaWebsite 
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-page)
+										+iconfont('tab') 
+									._item 
+										a(target="_blank" href="http://github.com/Dennchik/coronaWebsite")._link 
+											+iconfont('arrow-right')
+											| coronaWebsite
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-rep...) 
+							._item 
+								.submenu-child 
+									._title
+										a(target="_blank" href="http://dennchik.github.io/Relvise/build/")._link Relvise 
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-page)
+										+iconfont('tab')
+									._item 
+										a(target="_blank" href="http://github.com/Dennchik/Relvise")._link 
+											+iconfont('arrow-right')
+											| Relvise
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-rep...) 
+							._item 
+								.submenu-child 
+									._title
+										a(target="_blank" href="http://dennchik.github.io/Clear-fit/public/")._link Clear-fit 
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-page)
+										+iconfont('tab') 
+									._item 
+										a(target="_blank" href="http://github.com/Dennchik/Clear-fit")._link 
+											+iconfont('arrow-right')
+											| coronaWebsite
+											span &nbsp;(
+												+iconfont('git-hub')
+												| Git-rep...) 
 		.setting-menu._settings
 			._wrapper 
 				ul._list 
@@ -28,7 +72,7 @@
 					li._parent 
 						a._link.-sub-link(href="#") Темы
 							+iconfont('angle-right')
-						.sub-menu._sub-menu
+						.submenu-settings._sub-menu
 							ul._list 
 								li
 									a._link(href="#") Светлая

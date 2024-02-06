@@ -14,13 +14,17 @@ const $ = {
 	sideBarSubItems: document.querySelectorAll('.active-bar__sub-item'),
 	itemContact: document.querySelector('.header-content__item-contact'),
 	bttns: document.querySelectorAll('.burger-bottom'),
+	menuTitles: document.querySelectorAll('.parent-menu__title'),
+	buttonTabs: document.querySelectorAll('.icon-tab'),
 	bttn: document.querySelector('.burger-bottom'),
 };
 // -----------------------(isMobile - Side Bar Menu)----------------------------
 import isMobile from "../assets/Js-devise.js";
 if (isMobile.any()) {
-	_loop($.bttns, '_open');
+	_loop($.bttns, 'burger-bottom', '_open');
 }
+_loop($.buttonTabs, '.submenu-child', '_open');
+_loop($.menuTitles, '.parent-menu__list-item', '_open');
 // -------------------------(Collapse - Terminal)-------------------------------
 function tm_Layout() {
 	$.contact.addEventListener('click', () => {
@@ -136,12 +140,19 @@ function parentMenu() {
 	}
 }
 // -----------------------------------------------------------------------------
-function _loop(els, md) {
+function _loop(els, elClosest, md) {
 	for (let i = 0; i < els.length; i++) {
-		let el = els[i];
-		el.addEventListener('click', () => {
-			el.classList.toggle(md);
-			$.openSide.classList.toggle('opened-menu');
+		let item = els[i];
+		item.addEventListener('click', () => {
+			switch (true) {
+				case item.classList.contains(elClosest):
+					item.classList.toggle(md);
+					$.openSide.classList.toggle('opened-menu');
+					break;
+				default:
+					item.closest(elClosest).classList.toggle(md);
+					break;
+			}
 		});
 	}
 }

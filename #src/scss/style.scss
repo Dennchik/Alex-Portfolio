@@ -43,6 +43,7 @@
 }
 
 [class*='icon-'] {
+	cursor: pointer;
 	height: 100%;
 	@include flex-align-center-justify-center;
 }
