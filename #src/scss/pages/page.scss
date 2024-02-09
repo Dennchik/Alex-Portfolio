@@ -15,7 +15,7 @@
 		display: flex;
 		flex-direction: column;
 		border-radius: 0.7rem;
-		border: 1px solid $blue-light-not-active;
+		border: 1px solid var(--font-color-not-active);
 		box-shadow: 1px 0px 5px $boxShadow;
 
 		@include _690 {
@@ -41,10 +41,10 @@
 
 	// .page__footer
 	&__footer {
-		height: $footerHeight;
-		background: $background-side-bar;
-		border-top: 1px solid $border-color;
-		color: $blue-light;
+		// height: $footerHeight;
+		background: var(--background-side-bar);
+		border-top: 1px solid var(--border-color);
+		color: var(--font-color-not-active);
 		z-index: 3;
 		@include flex-align-center;
 	}
@@ -81,9 +81,21 @@
 
 	// .editor__section
 	&__section {
-		height: 100%;
-		padding: 0 1.5rem;
+		// height: 100%;
 		z-index: 1;
+		height: 0;
+		transition: height 0.9s ease-in-out;
+		&._active {
+			height: 100%;
+		}
+
+		&:nth-child(2) {
+			&._active {
+				.scills-page {
+					animation: fadeIn 2s ease;
+				}
+			}
+		}
 	}
 
 	// .editor__terminal
@@ -93,5 +105,14 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+	}
+}
+@keyframes fadeIn {
+	from {
+		rotate: -180deg;
+	}
+
+	to {
+		rotate: 0;
 	}
 }

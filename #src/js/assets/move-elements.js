@@ -1,4 +1,3 @@
-
 export default function dinamicAdaptive() {
   class ItcMoveEl {
     constructor() {

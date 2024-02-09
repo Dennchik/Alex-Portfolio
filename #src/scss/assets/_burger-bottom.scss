@@ -15,7 +15,7 @@
 		svg {
 			width: 3.8rem;
 			height: 3.8rem;
-			stroke: $blue-light;
+			stroke: var(--font-color-active);
 			stroke-width: 0.1em;
 			stroke-linecap: round;
 			stroke-linejoin: round;
@@ -31,7 +31,7 @@
 				stroke-dashoffset: var(--offset, 126px);
 				transform: translateZ(0);
 				&:nth-child(2) {
-					border: 1px solid $blue-light;
+					border: 1px solid var(--font-color-active);
 					--duration: 0.35s;
 					--easing: ease-in;
 					--offset: 100px;

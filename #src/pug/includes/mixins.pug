@@ -15,11 +15,12 @@ mixin link(id, href, name)
 mixin btn-link(type, text, mod)
 	- m = mod || ''
 	a(class=mod + '' type=type)=text
-		block
+	block
 
 //-! mixin iconFont		
 mixin iconfont(mod)
 	i(class='icon-' + mod)
+		block
 
 //-! Mxin list «rest arguments».
 mixin list-item(list, link, alink, name)

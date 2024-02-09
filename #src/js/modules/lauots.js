@@ -1,5 +1,6 @@
-import menuKeyframes from "./animetion.js";
+import { menuKeyframes, scills } from "./animetion.js";
 import { myname, timeLine, timeSlide } from "./animetion.js";
+// import { menuKeyframes, scills } from "./animescills.js";
 // -----------------------------------------------------------------------------
 const $ = {
 	elTerminal: document.querySelector('.editor'),
@@ -17,6 +18,7 @@ const $ = {
 	menuTitles: document.querySelectorAll('.parent-menu__title'),
 	buttonTabs: document.querySelectorAll('.icon-tab'),
 	bttn: document.querySelector('.burger-bottom'),
+	scillsPage: document.querySelector('.scills-page')
 };
 // -----------------------(isMobile - Side Bar Menu)----------------------------
 import isMobile from "../assets/Js-devise.js";
@@ -51,7 +53,8 @@ function topMenu() {
 						timeSlide.play();
 						break;
 					case target.contains('_scills'):
-						// myname.play();
+						console.log(target);
+						scills($.scillsPage);
 						// timeLine.play();
 						break;
 					case target.contains('_project'):
@@ -188,11 +191,11 @@ const openSwitch = (target) => {
 			break;
 	}
 };
-const to_close = (target, elm, md) => {
+const to_close = (item, elm, md) => {
 	switch (true) {
-		case target.contains('icon-cogs-gear'):
+		case item.contains('icon-cogs-gear'):
 			break;
-		case target.contains('setting-menu__link--sub-link'):
+		case item.contains('setting-menu__link--sub-link'):
 			break;
 		default:
 			elm.classList.remove(md);

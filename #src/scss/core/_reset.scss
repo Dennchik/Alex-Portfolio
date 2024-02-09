@@ -9,9 +9,9 @@ body {
 
 	height: 100%;
 	counter-reset: heading;
-	color: $font-body-color;
+	color: var(--font-body-color);
 	overflow-x: hidden;
-	background-color: $background;
+	background-color: var(--background-color);
 
 	letter-spacing: 0.7px;
 	user-select: none;
@@ -63,9 +63,6 @@ a {
 
 a:hover {
 	text-decoration: none;
-	@include _min-690 {
-		// color: $blue-light-not-active;
-	}
 }
 
 a:visited {
@@ -173,35 +170,35 @@ h6 {
 }
 
 ::-webkit-scrollbar-track {
-	background: $scrollbar-thumb-bgcolor;
+	background: var(--scrollbar-thumb-bgcolor);
 	// background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-	border: 1px solid $border-color;
+	border: 1px solid var(--border-color);
 	border-radius: 2px;
-	background-color: $themes-color;
+	background-color: var(--themes-color);
 	background-image: -webkit-linear-gradient(
 		45deg,
-		$background-thumb 25%,
+		var(--background-thumb) 25%,
 		transparent 25%,
 		transparent 50%,
-		$background-thumb 50%,
-		$background-thumb 75%,
+		var(--background-thumb) 50%,
+		var(--background-thumb) 75%,
 		transparent 75%,
 		transparent
 	);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: $background-thumb;
+	background-color: var(--background-thumb);
 	background-image: -webkit-linear-gradient(
 		45deg,
-		$themes-color 25%,
+		var(--themes-color) 25%,
 		transparent 25%,
 		transparent 50%,
-		$themes-color 50%,
-		$themes-color 75%,
+		var(--themes-color) 50%,
+		var(--themes-color) 75%,
 		transparent 75%,
 		transparent
 	);

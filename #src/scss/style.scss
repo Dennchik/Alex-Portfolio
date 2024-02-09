@@ -56,7 +56,6 @@
 
 // todo --------------------------- Assets -------------------------------------
 @import 'assets/loading';
-// @import 'assets/clock';
 @import 'assets/burger-bottom';
 // todo --------------------------- layout -------------------------------------
 @import 'layout/bem-block';
@@ -65,6 +64,8 @@
 // todo --------------------------- Pages --------------------------------------
 @import 'pages/page';
 @import 'pages/main-content';
+// todo --------------------------- Modules ------------------------------------
+@import 'modules/breadcrumbs';
 // todo -------------------------- Sections ------------------------------------
 @import 'section/side-bar';
 @import 'section/section-hello';

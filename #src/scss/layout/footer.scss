@@ -5,7 +5,7 @@
 	// .footer__column
 	&__column {
 		&:last-child {
-			border-left: 1px solid $border-color;
+			border-left: 1px solid var(--border-color);
 		}
 	}
 
@@ -34,7 +34,7 @@
 		padding-left: 1.5rem;
 		font-size: 1.8rem;
 		&:hover {
-			color: $blue-light-not-active;
+			color: var(--font-color-not-active);
 		}
 	}
 }

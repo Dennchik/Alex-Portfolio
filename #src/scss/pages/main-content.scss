@@ -1,17 +1,18 @@
 .main-content {
 	flex: 0 1 100%;
+
 	// .main-content__body
 	&__body {
 		position: relative;
 		z-index: 7;
 		min-height: 100%;
 		display: flex;
-		background-color: $background-editor;
+		background-color: var(--background-editor);
 	}
 
 	// .main-content__main-side
 	&__side-bar {
-		border-right: 1px solid $border-color;
+		border-right: 1px solid var(--border-color);
 		min-height: 100%;
 	}
 
@@ -20,8 +21,10 @@
 		position: relative;
 		width: 100%;
 		z-index: 2;
-		overflow: hidden;
 		border-top: 1px solid #0000004d;
+
+		overflow: hidden;
+		max-height: calc(100vh - 12.6rem);
 	}
 }
 // -----------------------------------------------------------------------------
@@ -36,7 +39,7 @@
 	transition:
 		transform 0.5s ease 0s,
 		opacity 0.8s ease 0s;
-	background: $background-transparent;
+	background: var(--background-transparent);
 	opacity: 0;
 	z-index: 9;
 

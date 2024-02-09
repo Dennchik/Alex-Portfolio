@@ -26,16 +26,16 @@
 		top: 0;
 		width: 100%;
 		padding: 0 1.5rem;
-		background: $background-color-title;
+		background: var(--background-color-title);
 		height: $titleHeight;
-		border-bottom: 1px solid $border-color;
+		border-bottom: 1px solid var(--border-color);
 		@include flex-align-center;
 	}
 
 	// .terminal__title-col
 	&__title-col {
 		flex: 0 100%;
-		color: $blue-light;
+		color: var(--font-color-active);
 		.icon-terminal-arw {
 			justify-content: start;
 			font-size: 2.4rem;
@@ -49,10 +49,10 @@
 		height: 2.7rem;
 		width: 2.7rem;
 		border-radius: 0.7rem;
-		color: $blue-light;
+		color: var(--font-color-active);
 
 		&:hover {
-			background: $background-selected;
+			background: var(--background-selected);
 			color: $orange;
 		}
 
@@ -66,7 +66,7 @@
 
 	// .terminal__body
 	&__body {
-		background: $background-terminal;
+		background: var(--background-terminal);
 		display: flex;
 		padding-left: 2rem;
 		height: calc(100% - 3rem);
@@ -91,9 +91,9 @@
 		}
 
 		&:nth-child(2) {
-			background-color: $background-active-bar;
+			background-color: var(--background-active-bar);
 			flex: 0 1 6rem;
-			border-left: 1px solid $border-color;
+			border-left: 1px solid var(--border-color);
 		}
 
 		.hello-page__column {
