@@ -13,13 +13,7 @@ $font-defoult: 'Roboto', sans-serif;
 $font-family-secondary: 'Roboto Slab', sans-serif;
 $font-weight-defoult: 470;
 $font-size-defoult: 1.4rem;
-//* ----------------------------- [Font Color] ---------------------------------
-// $font-body-color: #b2d6ff;
-// $font-body-color: #707bb4;
-// $font-comment-collor: #707bb4;
-// $font-color-title: #4d5bce;
 //* ----------------------------------------------------------------------------
-// $font-color-title: #a8a7da;
 $font-color-var-name: #77faff;
 $font-color-var: #cd6dfa;
 $font-color-other-var: #e99287;
@@ -29,9 +23,9 @@ $yellow: #ecc673ee;
 $orange: #f67438;
 $second-color: #002f5a;
 $darkcyan: darkcyan;
+$color: #058daf;
 $text-color: #000000;
 //* ---------------------------- [Other colors] --------------------------------
-// -----------------------------------------------------------------------------
 $boxShadow: #000;
 $boxShadowSecond: #000;
 $BlackShadow: #091116;
@@ -44,13 +38,13 @@ $text-color-selection: #9b9999;
 
 // -----------------------------------------------------------------------------
 :root {
-	--font-body-color: #707bb4;
+	// --font-body-color: #7f8dcf;
 	--font-color-second: #4d5bce;
-	--font-color-title: #a8a7da;
+	--font-color-title: #88c0ff;
 	--font-color-active: #7796f3;
 	--font-color-not-active: #8bb0ff6c;
 	//* ---------------------------- [Background] --------------------------------
-	--background-color: #191b27;
+	--background-color: #9ea4c4;
 	--background-editor: #22222e;
 	--background-selected: #2b2d4156;
 	--background-terminal: #16161e;

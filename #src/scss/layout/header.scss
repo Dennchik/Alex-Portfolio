@@ -39,7 +39,7 @@
 		font-size: 1.4rem;
 		height: 100%;
 		width: 28rem;
-		border: 1px solid var(--border-colo);
+		border: 1px solid var(--border-color);
 		border-radius: 0.5rem;
 		background: var(--background-selected);
 		color: var(--font-body-color);
@@ -267,7 +267,7 @@
 				line-height: 250%; /* 4rem/1.6 */
 			}
 		}
-
+		transition: all 0.4s ease-in-out;
 		// .menu-top__item-btn _active
 		&._active {
 			position: relative;

@@ -1,6 +1,10 @@
 .editor > .editor__section:not(._active) {
-	display: none;
+	position: absolute;
+	transform: rotate(360deg) scale(0);
+	transition: all 0.5s ease-in-out;
+	opacity: 0;
 }
+
 .terminal ._collapse:not(._show) {
 	flex: 0 1 0;
 }
@@ -13,7 +17,7 @@
 	bottom: 0;
 	right: 0;
 	min-height: 100%;
-	z-index: 2;
+	z-index: 0;
 
 	@include _690 {
 		width: 100%;
@@ -23,7 +27,6 @@
 	&__top {
 		position: absolute;
 		top: 15%;
-		// right: 60%;
 		width: 40rem;
 		height: 44.2rem;
 		transform: rotate(-94.305deg);

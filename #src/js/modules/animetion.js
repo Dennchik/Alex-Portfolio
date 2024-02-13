@@ -21,17 +21,30 @@ export function menuKeyframes(el) {
 	});
 };
 //* ------------------------------- Greed --------------------------------------
-export function scills(el) {
+// export function animePage(el) {
+// 	anime({
+// 		targets: el,
+// 		opacity: 1,
+// 		// direction: 'alternate',
+// 		translateX: [
+// 			{ value: 0, duration: 1000, delay: 300 }
+// 		],
+// 		scaleX: [
+// 			{ value: 3, duration: 100, delay: 300, easing: 'easeInExpo' },
+// 			{ value: 1, duration: 900 }
+// 		],
+// 		// scale: anime.stagger([0.7, 1.1], { from: 'center' }),
+// 		// opacity: anime.stagger([0, 0], { from: 'center' }),
+// 		delay: anime.stagger(10, { start: 100 }),
+// 		easing: 'easeOutElastic(1, .8)',
+// 	});
+// };
+export function animePage(el) {
 	anime({
 		targets: el,
-		// translateX: 900,
-		direction: 'alternate',
-		scale: -1,
-		// loop: true,
-		// easing: 'linear',
-		easing: 'easeInOutQuad',
-		// translateX: [-700, 0],
-		scale: anime.stagger([-0.7, 1.1], { from: 'center' }),
+		delay: anime.stagger(100),
+		translateX: [700, 0],
+		delay: 300,
 	});
 };
 //* ------------------------------ My name -------------------------------------
@@ -52,7 +65,6 @@ export let timeLine = anime.timeline({
 	duration: 1750,
 	delay: anime.stagger(100)
 });
-
 timeLine
 	.add({
 		targets: '.hello-page__privet',
@@ -81,52 +93,14 @@ timeLine
 		translateX: [700, 0],
 	}, 500);
 
-
 export let timeSlide = anime.timeline({
 	duration: 2000,
 	delay: anime.stagger(100)
 });
-
 timeSlide
 	.add({
 		targets: '.mainslide__body',
 		opacity: 1,
 		translateY: [-1700, 0],
-	}, 500); // absolute offset
-
-// -----------------------------------------------------------------------------
-
-// -----------------------------------------------------------------------------
-// const menuKeyframes = (el) => {
-// 	anime({
-// 		targets: el,
-// 		translateX: [
-// 			{ value: 0, duration: 1000, delay: 0 }
-// 		],
-// 		translateY: [
-// 			{ value: 0, duration: 500, delay: 500 }
-// 		],
-// 		scaleX: [
-// 			{ value: 0.7, duration: 100, delay: 0, easing: 'easeOutExpo' },
-// 			{ value: 1, duration: 900 },
-// 		],
-// 		scaleY: [
-// 			{ value: 0.5, duration: 50, delay: 0, easing: 'easeOutExpo' },
-// 			{ value: 1, duration: 900 }
-// 		],
-// 		easing: 'easeOutElastic(1, .8)',
-// 	});
-// };
-// // export default menuKeyframes;
-// const scills = (el) => {
-
-// 	anime({
-// 		targets: el,
-// 		translateX: 100,
-// 		direction: 'alternate',
-// 		easing: 'linear'
-// 	});
-// };
-// export { scills, menuKeyframes };
-
-// -----------------------------------------------------------------------------
+	}, 500);
+//* ----------------------------------------------------------------------------

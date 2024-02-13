@@ -1,5 +1,7 @@
 import loaded from './modules/loading.js';
 loaded('.preloader');
+import dinamicAdaptive from './assets/move-elements.js';
+dinamicAdaptive();
 import mainSlede from './modules/main-slide.js';
 mainSlede(
 	'.mainslide__body', //- init slide 
@@ -15,5 +17,3 @@ modal();
 import { tm_Layout, sideBar, topMenu, parentMenu } from "./modules/lauots.js";
 tm_Layout(); topMenu(); sideBar(); parentMenu();
 
-import ItcMoveEl from './assets/move-elements.js';
-ItcMoveEl();

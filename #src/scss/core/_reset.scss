@@ -8,15 +8,32 @@ body {
 	}
 
 	height: 100%;
+	overflow-x: hidden;
 	counter-reset: heading;
 	color: var(--font-body-color);
-	overflow-x: hidden;
 	background-color: var(--background-color);
 
 	letter-spacing: 0.7px;
 	user-select: none;
+
 	@include _1024 {
 		font-size: 50%;
+	}
+}
+
+:root {
+	--background-color: #191b27;
+	--font-body-color: #7f8dcf;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+	body {
+		:root {
+			--background-color: #191b27;
+			--font-body-color: #ffffff;
+		}
+		background-color: var(--background-color);
+		color: var(--font-body-color);
 	}
 }
 
