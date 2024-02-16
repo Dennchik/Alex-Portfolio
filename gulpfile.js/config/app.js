@@ -1,5 +1,3 @@
-const recompress = require('imagemin-jpeg-recompress');
-const pngquant = require('imagemin-pngquant');
 const pugbem = require('gulp-pugbem');
 const isProd = process.argv.includes('--production');
 const isDev = !isProd;
@@ -96,14 +94,10 @@ module.exports = {
 		cascade: false,
 		grid: 'auto-place',
 		overrideBrowserslist: [
-			'last 3 versions',
-			'Android >= 5',
-			'Firefox >= 24',
-			'Safari >= 6',
-			'Opera >= 12',
+			'last 3 versions'
 		],
 	},
 	imagemin: {
-		verbose: true,
+		verbose: true
 	}
 };
