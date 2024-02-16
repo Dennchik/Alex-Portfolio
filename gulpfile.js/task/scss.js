@@ -8,9 +8,9 @@ const scss = () => {
 			})),
 		}))
 		.pipe($.gul.sassGlob())
-		// .pipe($.gulpIf($.app.isDev, $.gul.sourcemaps.init({
-		// 	largeFile: true
-		// })))
+		.pipe($.gulpIf($.app.isDev, $.gul.sourcemaps.init({
+			largeFile: true
+		})))
 		.pipe($.sass.sync({
 			outputStyle: 'expanded',
 		}).on('error', $.gul.notify.onError()))
@@ -19,7 +19,7 @@ const scss = () => {
 		.pipe($.gulpIf($.app.isProd, $.gul.debug({ title: '(Autoprefixer)' })))
 		.pipe($.gulpIf($.app.isProd, $.gul.groupCssMediaQueries()))
 		.pipe($.gulpIf($.app.isProd, $.gul.shorthand()))
-		.pipe($.gulpIf($.app.isProd, $.gul.webpCss()))
+		// .pipe($.gul.webpCss())
 		.pipe($.gulpIf($.app.isProd, $.gul.size({
 			title: 'До сжатия - (CSS):'
 		})))
@@ -32,10 +32,10 @@ const scss = () => {
 		.pipe($.gulpIf($.app.isProd, $.gul.size({
 			title: 'После сжатия - (CSS):'
 		})))
-		// .pipe($.gulpIf($.app.isDev, $.gul.sourcemaps.write('.')))
-		// .pipe($.gulpIf($.app.isDev, $.gul.debug({
-		// 	title: 'Source - Maps (WRITE)'
-		// })))
+		.pipe($.gulpIf($.app.isDev, $.gul.sourcemaps.write('.')))
+		.pipe($.gulpIf($.app.isDev, $.gul.debug({
+			title: 'Source - Maps (WRITE)'
+		})))
 		.pipe($.gulp.dest($.path.scss.dest));
 };
 module.exports = scss;
