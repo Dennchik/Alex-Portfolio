@@ -34,6 +34,11 @@ module.exports = {
 		watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg,ico}',
 		dest: pathDest + '/img/'
 	},
+	imagemin: {
+		src: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,ico}',
+		watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,ico}',
+		dest: pathDest + '/img/'
+	},
 	svgSpr: {
 		src: pathSrc + '/img-sprite/**/*.svg',
 		watch: pathSrc + '/img-sprite/**/*.svg',

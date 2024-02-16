@@ -19,7 +19,7 @@ const scss = () => {
 		.pipe($.gulpIf($.app.isProd, $.gul.debug({ title: '(Autoprefixer)' })))
 		.pipe($.gulpIf($.app.isProd, $.gul.groupCssMediaQueries()))
 		.pipe($.gulpIf($.app.isProd, $.gul.shorthand()))
-		.pipe($.gulpIf($.app.isProd, $.gul.webpCss()))
+		// .pipe($.gulpIf($.app.isProd, $.gul.webpCss()))
 		.pipe($.gulpIf($.app.isProd, $.gul.size({
 			title: 'До сжатия - (CSS):'
 		})))

@@ -3,7 +3,7 @@ const pngquant = require('imagemin-pngquant');
 const pugbem = require('gulp-pugbem');
 const isProd = process.argv.includes('--production');
 const isDev = !isProd;
-
+const imagemin = require('gulp-imagemin');
 module.exports = {
 	isProd: isProd,
 	isDev: isDev,
@@ -103,24 +103,48 @@ module.exports = {
 			'Opera >= 12',
 		],
 	},
-	imagemin: {
-		verbose: true,
-		// interlaced: true,
-		// progressive: true,
-		// optimizationLevel: 5,
-	}[
-		recompress({
-			loops: 6,
-			min: 50,
-			max: 90,
-			quality: 'high',
-			use: [
-				pngquant({
-					quality: [0.8, 1],
-					strip: true,
-					speed: 1,
-				}),
+	// imagemin: {
+	// 	// verbose: true,
+	// 	interlaced: true,
+	// 	progressive: true,
+	// 	optimizationLevel: 5,
+
+	// }[
+	// 	recompress({
+	// 		loops: 6,
+	// 		min: 50,
+	// 		max: 90,
+	// 		quality: 'high',
+	// 		use: [
+	// 			pngquant({
+	// 				quality: [0.8, 1],
+	// 				strip: true,
+	// 				speed: 1,
+	// 			}),
+	// 		],
+	// 	})
+	// ],
+	imagemin: ([
+		imagemin.svgo({
+			plugins: [
+				{ optimizationLevel: 5 },
+				{ progessive: true },
+				{ interlaced: true },
+				{ removeViewBox: false },
+				{ removeUselessStrokeAndFill: false },
+				{ cleanupIDs: false }
 			],
-		})
-	],
+		}),
+		imagemin.gifsicle(
+			{ interlaced: true }
+		),
+		imagemin.optipng({
+			optimizationLevel: 5
+		}),
+		imagemin.mozjpeg({
+			quality: 75,
+			progressive: true
+		}),
+	]
+	)
 };
