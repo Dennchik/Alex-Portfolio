@@ -8,7 +8,7 @@ const image = () => {
 				message: error.message
 			}))
 		}))
-		.pipe($.gul.newer($.path.image.dest))
+		.pipe($.gulpIf($.app.isDev, $.gul.newer($.path.image.dest)))
 		.pipe($.gul.webp())
 		.pipe($.gulp.dest($.path.image.dest))
 		.pipe($.gulp.src($.path.image.src))

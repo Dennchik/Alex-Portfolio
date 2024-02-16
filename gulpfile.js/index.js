@@ -32,9 +32,9 @@ const watcher = () => {
 	$.gulp.watch($.path.fontsStyle.watch, change).on('all', $.browserSync.reload);
 };
 const end = $.gulp.series(
-	task.clear, task.json,
-	$.gulp.parallel(task.pug, task.image, task.svg, task.scss, task.js, task.fonts),
-	fontsStyle,
+	task.clear, task.json, fontsStyle,
+	$.gulp.parallel(task.pug, task.scss, task.js, task.fonts, task.image, task.svg,),
+
 );
 const dev = $.gulp.series(end, $.gulp.parallel(task.server, watcher));
 //* Call

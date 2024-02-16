@@ -105,22 +105,5 @@ module.exports = {
 	},
 	imagemin: {
 		verbose: true,
-		interlaced: true,
-		progressive: true,
-		optimizationLevel: 5,
-	}[
-		recompress({
-			loops: 6,
-			min: 50,
-			max: 90,
-			quality: 'high',
-			use: [
-				pngquant({
-					quality: [0.8, 1],
-					strip: true,
-					speed: 1,
-				}),
-			],
-		})
-	],
+	}
 };
