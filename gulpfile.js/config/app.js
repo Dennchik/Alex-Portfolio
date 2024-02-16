@@ -9,7 +9,8 @@ module.exports = {
 	isDev: isDev,
 
 	webpack: {
-		mode: isProd ? 'production' : 'development',
+		// mode: isProd ? 'production' : 'development',
+		mode: 'production',
 		entry: {
 			// script: './#src/js/script.js',
 			main: './#src/js/main.js'
@@ -58,11 +59,11 @@ module.exports = {
 		},
 	},
 	pug: {
-		pretty: isDev,
+		pretty: true,
 		plugins: [pugbem],
 	},
 	htmlMin: {
-		collapseWhitespace: isProd,
+		collapseWhitespace: true
 	},
 	Js: {
 		ext: {

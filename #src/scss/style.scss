@@ -55,7 +55,6 @@
 }
 
 // todo --------------------------- Assets -------------------------------------
-@import 'assets/loading';
 @import 'assets/burger-bottom';
 // todo --------------------------- layout -------------------------------------
 @import 'layout/bem-block';
@@ -65,6 +64,7 @@
 @import 'pages/page';
 @import 'pages/main-content';
 // todo --------------------------- Modules ------------------------------------
+@import 'modules/loading';
 @import 'modules/breadcrumbs';
 // todo -------------------------- Sections ------------------------------------
 @import 'section/side-bar';

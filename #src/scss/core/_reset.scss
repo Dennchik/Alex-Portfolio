@@ -1,5 +1,4 @@
-html,
-body {
+html {
 	font: {
 		style: normal;
 		size: 62.5%;
@@ -21,22 +20,6 @@ body {
 	}
 }
 
-:root {
-	--background-color: #191b27;
-	--font-body-color: #7f8dcf;
-}
-
-@media screen and (prefers-color-scheme: dark) {
-	body {
-		:root {
-			--background-color: #191b27;
-			--font-body-color: #ffffff;
-		}
-		background-color: var(--background-color);
-		color: var(--font-body-color);
-	}
-}
-
 body {
 	font:
 		1.4rem/1.4 Roboto,
@@ -47,6 +30,21 @@ body {
 			sans-serif;
 	}
 }
+// :root {
+// 	--background-color: #191b27;
+// 	--font-body-color: #7f8dcf;
+// }
+
+// @media screen and (prefers-color-scheme: dark) {
+// 	body {
+// 		:root {
+// 			--background-color: #191b27;
+// 			--font-body-color: #ffffff;
+// 		}
+// 		background-color: var(--background-color);
+// 		color: var(--font-body-color);
+// 	}
+// }
 
 * {
 	padding: 0px;

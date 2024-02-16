@@ -1,4 +1,3 @@
-// function _collapse(item) {
 export default class ItcCollapse {
 	constructor(target, duration = 350) {
 		this._target = target;

@@ -11,30 +11,23 @@ const scss = () => {
 		.pipe($.gulpIf($.app.isDev, $.gul.sourcemaps.init({
 			largeFile: true
 		})))
-		.pipe($.gulpIf($.app.isDev, $.gul.debug({
-			title: 'Source - Maps (INIT)'
-		})))
 		.pipe($.sass.sync({
 			outputStyle: 'expanded',
 		}).on('error', $.gul.notify.onError()))
 		.pipe($.gulpIf($.app.isProd, $.gul.stripCssComments()))
 		.pipe($.gulpIf($.app.isProd, $.gul.autoprefixer($.app.autoprefixer)))
-		.pipe($.gulpIf($.app.isProd, $.gul.debug({
-			title: '(Autoprefixer)'
-		})))
+		.pipe($.gulpIf($.app.isProd, $.gul.debug({ title: '(Autoprefixer)' })))
 		.pipe($.gulpIf($.app.isProd, $.gul.groupCssMediaQueries()))
 		.pipe($.gulpIf($.app.isProd, $.gul.shorthand()))
 		.pipe($.gulpIf($.app.isProd, $.gul.webpCss()))
-		.pipe($.gulp.dest($.path.scss.dest))
-		.pipe($.gul.size({
+		.pipe($.gulpIf($.app.isProd, $.gul.size({
 			title: 'До сжатия - (CSS):'
+		})))
+		.pipe($.gulpIf($.app.isProd, $.gulp.dest($.path.scss.dest)))
+		.pipe($.gul.csso({
+			restructure: true,
+			sourceMap: true,
 		}))
-		.pipe($.gul.csso(
-			{
-				restructure: true,
-				sourceMap: true,
-			}
-		))
 		.pipe($.gul.rename($.app.renameScss))
 		.pipe($.gulpIf($.app.isProd, $.gul.size({
 			title: 'После сжатия - (CSS):'

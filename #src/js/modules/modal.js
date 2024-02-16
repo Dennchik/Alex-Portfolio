@@ -5,14 +5,16 @@ export default function modal() {
 		let img = mainSlide.querySelector("img");
 		img.onclick = function (e) {
 			let target = e.target;
+			let sourse = target.closest('.content-mainslide__image').querySelector('source').srcset;
 			if (!target.closest('.mainslide__slide').classList.contains('swiper-slide-active')) {
 				console.log('not active');
 				e.preventDefault();
 			} else {
-				let sourse = target.closest('.content-mainslide__image').querySelector('source').srcset;
-				let modalImg = modal.querySelector("#image");
 				modal.classList.add('_show');
+				console.log(sourse);
+				let modalImg = modal.querySelector('.modal__image');
 				modalImg.src = this.src;
+				console.log(modalImg.src);
 				modal.querySelector('source').srcset = sourse;
 				var span = modal.querySelector("span");
 				span.onclick = function () {
