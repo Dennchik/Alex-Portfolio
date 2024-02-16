@@ -10,7 +10,6 @@ module.exports = {
 		// mode: isProd ? 'production' : 'development',
 		mode: 'production',
 		entry: {
-			// script: './#src/js/script.js',
 			main: './#src/js/main.js'
 		},
 		output: {
