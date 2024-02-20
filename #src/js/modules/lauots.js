@@ -1,6 +1,5 @@
-import { menuKeyframes, animePage } from "./animetion.js";
-// import { myname, timeLine, timeSlide } from "./animetion.js";
-// import { menuKeyframes, scills } from "./animescills.js";
+import { menuKeyframes } from "./animetion.js";
+import isMobile from "../assets/Js-devise.js";
 // -----------------------------------------------------------------------------
 const $ = {
 	elTerminal: document.querySelector('.editor'),
@@ -20,7 +19,6 @@ const $ = {
 	bttn: document.querySelector('.burger-bottom')
 };
 // -----------------------(isMobile - Side Bar Menu)----------------------------
-import isMobile from "../assets/Js-devise.js";
 if (isMobile.any()) {
 	_loop($.bttns, 'burger-bottom', '_open');
 }
@@ -44,34 +42,11 @@ function topMenu() {
 		const tabcontent = $.tabcontents[i];
 		if (Object.hasOwnProperty.call($.tabcontents, i)) {
 			tablink.addEventListener('click', () => {
-				let target = tablink.classList;
-				switch (true) {
-					case target.contains('_hello'):
-						if (target.contains('_active')) {
-						} else {
-							// animePage(".hello-page");
-						}
-						break;
-					case target.contains('_scills'):
-						if (target.contains('_active')) {
-						} else {
-							// animePage('.scills-page');
-						}
-						break;
-					case target.contains('_project'):
-						if (target.contains('_active')) {
-						} else {
-							// animePage('.project-page');
-						}
-					default:
-						break;
-				}
 				_remove($.openSide, 'opened-menu');
 				_remove($.bttn, '_open');
 				const view_tablink = document.querySelector('.menu-top__item-btn._active');
 				const view_content = document.querySelector('.editor__section._active');
 				_toggleMenu(view_tablink);
-				// animePaper(view_content);
 				if (view_tablink && view_tablink !== tabcontent) {
 					_toggleMenu(tablink);
 				}
@@ -102,6 +77,7 @@ function sideBar() {
 					});
 					_toggleItem(selectItem);
 					if (select_item && select_item !== selectItem) {
+						// animePaper(selectItem)
 						_toggleItem(select_item);
 					} else if (select_item && select_item === selectItem) {
 						_toggleItem(selectItem);
@@ -172,23 +148,7 @@ const _toggleMenu = (el) => {
 	} else {
 		el.classList.add('_active');
 	}
-	if (el.classList.contains('editor__section')) {
-		// console.log(el);
-		// animePaper(el);
-	}
 };
-function animePaper(el) {
-	const newspaperSpinning = [
-		{ transform: "rotate(0) scale(1)" },
-		{ transform: "rotate(360deg) scale(0)" },
-	];
-	const newspaperTiming = {
-		duration: 500,
-		iterations: 1,
-	};
-	el.style.transform = 'scale(0)';
-	el.animate(newspaperSpinning, newspaperTiming);
-}
 const _toggleOpenElem = (el, elm) => {
 	if (el && el !== elm) {
 		_toggleItem(el);

@@ -7,6 +7,7 @@ global.$ = {
 	gulpSvgSprite: require('gulp-svg-sprite'),
 	requireDir: require('require-dir'),
 	webpack: require('webpack-stream'),
+	merge: require('gulp-merge-json'),
 	gulpIf: require('gulp-if'),
 	del: require('del'),
 	fs: require('fs'),
@@ -27,14 +28,13 @@ const watcher = () => {
 	$.gulp.watch($.path.json.readFile, task.pug).on('all', $.browserSync.reload);
 	$.gulp.watch($.path.scss.watch, task.scss).on('all', $.browserSync.reload);
 	$.gulp.watch($.path.image.watch, task.image).on('all', $.browserSync.reload);
-	$.gulp.watch($.path.svgSpr.watch, task.svg).on('all', $.browserSync.reload);
+	$.gulp.watch($.path.svgSpr.watch, task.sprite).on('all', $.browserSync.reload);
 	$.gulp.watch($.path.fonts.watch, task.fonts).on('all', $.browserSync.reload);
 	$.gulp.watch($.path.fontsStyle.watch, change).on('all', $.browserSync.reload);
 };
 const end = $.gulp.series(
-	task.clear, task.json, fontsStyle,
-	$.gulp.parallel(task.pug, task.scss, task.js, task.fonts, task.image, task.svg,),
-
+	task.clear, task.json,
+	$.gulp.parallel(task.pug, task.scss, task.js, task.fonts, task.image, task.sprite), fontsStyle
 );
 const dev = $.gulp.series(end, $.gulp.parallel(task.server, watcher));
 //* Call
@@ -47,6 +47,7 @@ exports.scss = task.scss;
 exports.js = task.js;
 exports.image = task.image;
 exports.svg = task.svg;
+exports.sprite = task.sprite;
 exports.fonts = task.fonts;
 exports.final = task.final;
 exports.fontsStyle = fontsStyle;

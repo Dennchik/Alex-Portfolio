@@ -7,10 +7,12 @@ import Swiper from 'swiper/bundle';
 // import 'swiper/css/bundle';
 // import 'swiper/css/pagination';
 // import 'swiper/css/scrollbar';
-export default function mainSlide(mainslide, pagination,
-	nextEl,
-	prevEl,
-	scrollbar,
+export default function mainSlide(
+	mainslide = '.mainslide__body',
+	pagination = '.hello-page__pagination-number',
+	scrollbar = '',
+	nextEl = '',
+	prevEl = '',
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {
@@ -40,7 +42,6 @@ export default function mainSlide(mainslide, pagination,
 				prevEl: prevEl,
 			},
 
-			//? And if we need scrollbar
 			scrollbar: {
 				el: scrollbar,
 			},

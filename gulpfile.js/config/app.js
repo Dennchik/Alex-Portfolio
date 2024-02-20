@@ -1,9 +1,9 @@
 const recompress = require('imagemin-jpeg-recompress');
 const pngquant = require('imagemin-pngquant');
 const pugbem = require('gulp-pugbem');
+const imagemin = require('gulp-imagemin');
 const isProd = process.argv.includes('--production');
 const isDev = !isProd;
-const imagemin = require('gulp-imagemin');
 module.exports = {
 	isProd: isProd,
 	isDev: isDev,
@@ -75,6 +75,10 @@ module.exports = {
 		extname: '.css',
 		suffix: '.min',
 	},
+	renameSvg: { 
+		// extname: '.css',
+		// suffix: '.min',
+	},
 	fonter: {
 		formats: ['woff', 'ttf', 'svg', 'otf'],
 	},
@@ -103,27 +107,6 @@ module.exports = {
 			'Opera >= 12',
 		],
 	},
-	// imagemin: {
-	// 	// verbose: true,
-	// 	interlaced: true,
-	// 	progressive: true,
-	// 	optimizationLevel: 5,
-
-	// }[
-	// 	recompress({
-	// 		loops: 6,
-	// 		min: 50,
-	// 		max: 90,
-	// 		quality: 'high',
-	// 		use: [
-	// 			pngquant({
-	// 				quality: [0.8, 1],
-	// 				strip: true,
-	// 				speed: 1,
-	// 			}),
-	// 		],
-	// 	})
-	// ],
 	imagemin: ([
 		imagemin.svgo({
 			plugins: [
@@ -145,6 +128,11 @@ module.exports = {
 			quality: 75,
 			progressive: true
 		}),
-	]
-	)
+		recompress({
+			loops: 4,
+			min: 70,
+			max: 80,
+			quality: 'high'
+		})
+	])
 };

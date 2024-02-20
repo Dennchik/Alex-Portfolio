@@ -30,7 +30,8 @@ module.exports = {
 		dest: pathDest + '/js'
 	},
 	image: {
-		src: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg,ico}',
+		// src: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg,ico}',
+		src: [pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg,ico}', '!/img/svg/*.svg'],
 		watch: pathSrc + '/img/**/*.{png,jpg,jpeg,gif,svg,ico}',
 		dest: pathDest + '/img/'
 	},
@@ -42,8 +43,8 @@ module.exports = {
 	svgSpr: {
 		src: pathSrc + '/img-sprite/**/*.svg',
 		watch: pathSrc + '/img-sprite/**/*.svg',
-		dest: pathDest + '/img/',
-		destJs: pathDest + '/js/',
+		dest: pathDest + '/img/sprites',
+		// destJs: pathDest + '/js/',
 	},
 	fonts: {
 		src: pathSrc + '/fonts/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}',

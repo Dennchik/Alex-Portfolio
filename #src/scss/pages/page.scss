@@ -1,3 +1,38 @@
+.loaded {
+	.page {
+		&__header {
+			transform: translate(0, 0);
+			box-shadow: 1px 1px 3px $boxShadowSecond;
+			transition: all 0.5s ease-in-out 0.5s;
+		}
+		&__footer {
+			transform: translate(0, 0);
+			transition: transform 0.5s ease-in-out 0.5s;
+		}
+		&__desktop {
+			border: 1px solid var(--font-color-not-active);
+			box-shadow: 1px 0px 5px $boxShadow;
+			transition: all 0.7s ease-in-out 0.7s;
+		}
+	}
+	.bgblurs-box {
+		opacity: 1;
+		transition: opacity 0.5s ease-in-out 0.8s;
+	}
+
+	.main-content {
+		&__body {
+			opacity: 1;
+			transition: opacity 0.8s ease-in-out 0.8s;
+		}
+
+		// .side-bar {
+		// 	opacity: 1;
+		// 	transition: opacity 0.5s ease-in-out 0.5s;
+		// }
+	}
+}
+
 .page {
 	// .page__body
 	&__body {
@@ -15,9 +50,6 @@
 		display: flex;
 		flex-direction: column;
 		border-radius: 0.7rem;
-		border: 1px solid var(--font-color-not-active);
-		box-shadow: 1px 0px 5px $boxShadow;
-
 		@include _690 {
 			min-height: calc(100vh - 2.2rem);
 		}
@@ -26,9 +58,8 @@
 	// .page__header
 	&__header {
 		height: calc($headerHeight * 2);
-		box-shadow: 1px 1px 3px $boxShadowSecond;
-
 		z-index: 8;
+		transform: translate(0, -100%);
 	}
 
 	// .page__content
@@ -45,6 +76,8 @@
 		border-top: 1px solid var(--border-color);
 		color: var(--font-color-not-active);
 		z-index: 3;
+
+		transform: translate(0, 100%);
 		@include flex-align-center;
 	}
 }
@@ -52,10 +85,10 @@
 .editor {
 	position: relative;
 	width: 100%;
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 	height: 100%;
+	flex-direction: column;
+	@include flex-justify-center;
 
 	.terminal__column {
 		opacity: 0;
@@ -82,26 +115,28 @@
 	&__section {
 		z-index: 1;
 		opacity: 1;
+		width: 100%;
+		height: 100%;
 		transform: rotate(0) scale(1);
 		transition-property: transform, opacity;
 		transition-duration: 0.5s;
 		transition-delay: 0.7s, 0.1s;
 
-		&._active {
-			height: 100%;
-			.hello-page {
-				// animation: rotateIn 0.9s ease;
-				left: 0;
-			}
-			.scills-page {
-				// animation: rotateIn 0.9s ease;
-				left: 0;
-			}
-			.project-page {
-				// animation: rotateIn 0.9s ease;
-				left: 0;
-			}
-		}
+		// &._active {
+		//
+		// 	.hello-page {
+		// 		// animation: rotateIn 0.9s ease;
+		// 		left: 0;
+		// 	}
+		// 	.scills-page {
+		// 		// animation: rotateIn 0.9s ease;
+		// 		left: 0;
+		// 	}
+		// 	.project-page {
+		// 		// animation: rotateIn 0.9s ease;
+		// 		left: 0;
+		// 	}
+		// }
 	}
 
 	// .editor__terminal
@@ -114,14 +149,14 @@
 	}
 }
 
-@keyframes rotateIn {
-	from {
-		opacity: 0;
-		rotate: -180deg;
-	}
+// @keyframes rotateIn {
+// 	from {
+// 		opacity: 0;
+// 		rotate: -180deg;
+// 	}
 
-	to {
-		opacity: 1;
-		rotate: 0;
-	}
-}
+// 	to {
+// 		opacity: 1;
+// 		rotate: 0;
+// 	}
+// }

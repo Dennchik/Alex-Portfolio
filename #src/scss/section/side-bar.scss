@@ -1,6 +1,7 @@
 .side-bar {
 	height: 100%;
 	display: flex;
+	// opacity: 0;
 
 	// .side-bar__active-bar
 	&__active-bar {
@@ -29,6 +30,7 @@
 	// .menu__parent
 	&__parent {
 		position: absolute;
+		z-index: 3;
 		border: 1px solid var(--border-color);
 		width: auto;
 		width: 0;
@@ -38,7 +40,6 @@
 		transition: width 0.3s ease-out;
 
 		&._select {
-			z-index: 3;
 			width: 100%;
 
 			@include _min-490 {

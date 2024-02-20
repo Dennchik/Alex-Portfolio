@@ -1,15 +1,11 @@
 import loaded from './modules/loading.js';
 loaded('.preloader');
+
 import dinamicAdaptive from './assets/move-elements.js';
 dinamicAdaptive();
+
 import mainSlede from './modules/main-slide.js';
-mainSlede(
-	'.mainslide__body', //- init slide 
-	'.hello-page__pagination-number', //- pagination  
-	//- navigation: nextEl
-	//- navigation: prevEl
-	//- scrollbar
-);
+mainSlede();
 
 import modal from './modules/modal.js';
 modal();

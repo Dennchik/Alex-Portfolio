@@ -70,28 +70,28 @@ timeLine
 		targets: '.hello-page__privet',
 		opacity: 1,
 		translateX: [-700, 0],
-		delay: 300,
+		delay: 1300,
 	})
 	.add({
 		targets: '.hello-page__title',
 		opacity: 1,
 		translateX: [-700, 0],
-	}, 600)
+	}, 1000)
 	.add({
 		targets: '.hello-page__text',
 		opacity: 1,
 		translateX: [-700, 0],
-	}, 900)
+	}, 1100)
 	.add({
 		targets: '.hello-page__link',
 		opacity: 1,
 		translateX: [-700, 0],
-	}, 1200)
+	}, 1400)
 	.add({
 		targets: '.gutter-col',
 		opacity: 1,
 		translateX: [700, 0],
-	}, 500);
+	}, 1000);
 
 export let timeSlide = anime.timeline({
 	duration: 2000,

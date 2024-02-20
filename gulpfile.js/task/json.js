@@ -3,7 +3,7 @@ merge = require('gulp-merge-json');
 
 const json = () => {
 	return $.gulp.src($.path.json.src)
-		.pipe(merge({
+		.pipe($.merge({
 			fileName: 'data.json',
 			edit: (json, file) => {
 				// Extract the filename and strip the extension

@@ -7,12 +7,12 @@
 		z-index: 7;
 		min-height: 100%;
 		display: flex;
+		opacity: 0;
 		background-color: var(--background-editor);
 	}
 
 	// .main-content__main-side
 	&__side-bar {
-		border-right: 1px solid var(--border-color);
 		min-height: 100%;
 	}
 
@@ -21,8 +21,6 @@
 		position: relative;
 		width: 100%;
 		z-index: 2;
-		border-top: 1px solid #0000004d;
-
 		overflow: hidden;
 		max-height: calc(100vh - 12.6rem);
 	}
