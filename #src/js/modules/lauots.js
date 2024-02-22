@@ -15,7 +15,7 @@ const $ = {
 	itemContact: document.querySelector('.header-content__item-contact'),
 	bttns: document.querySelectorAll('.burger-bottom'),
 	menuTitles: document.querySelectorAll('.parent-menu__title'),
-	buttonTabs: document.querySelectorAll('.icon-tab'),
+	buttonTabs: document.querySelectorAll('.submenu-child'),
 	bttn: document.querySelector('.burger-bottom')
 };
 // -----------------------(isMobile - Side Bar Menu)----------------------------

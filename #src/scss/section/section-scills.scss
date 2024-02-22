@@ -27,7 +27,7 @@
 		align-items: center;
 
 		&:not(:first-child) {
-			padding: 0 2rem;
+			padding: 2rem;
 		}
 		&:nth-child(1) {
 			background-color: var(--background-active-bar);
@@ -37,10 +37,6 @@
 		}
 
 		@include _min-690 {
-			&:not(:first-child) {
-				padding-bottom: 2rem;
-			}
-
 			&:nth-child(1) {
 				grid-column: 1 / 3;
 				align-items: center;

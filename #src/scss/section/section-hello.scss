@@ -8,6 +8,8 @@
 	grid-template-columns: 1fr 6rem 1fr;
 	opacity: 1;
 
+	overflow-x: hidden;
+
 	@include _min-690 {
 		max-height: 63.6rem;
 	}

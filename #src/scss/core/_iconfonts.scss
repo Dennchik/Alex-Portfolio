@@ -27,34 +27,34 @@
   //* Better Font Rendering
 }
 
+.icon-react {
+  &:before {
+    content: $icon-react;
+  }
+}
 .icon-gulp {
   &:before {
     content: $icon-gulp;
-    color: #da4648;
   }
 }
 .icon-javascript {
   &:before {
     content: $icon-javascript;
-    color: #f7df1e;
   }
 }
 .icon-java {
   &:before {
     content: $icon-java;
-    color: #007396;
   }
 }
 .icon-vue-dot-js {
   &:before {
     content: $icon-vue-dot-js;
-    color: #4fc08d;
   }
 }
 .icon-node-dot-js {
   &:before {
     content: $icon-node-dot-js;
-    color: #393;
   }
 }
 .icon-money-bag {
