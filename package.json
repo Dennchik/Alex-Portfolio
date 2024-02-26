@@ -12,6 +12,7 @@
 		"json": "gulp json",
 		"sprite": "gulp sprite",
 		"svg": "gulp svg",
+		"SPITE": "gulp sprite",
 		"clear": "gulp clear",
 		"task": "gulp --tasks"
 	},

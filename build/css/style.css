@@ -2066,8 +2066,8 @@ h6 {
   -ms-transform: rotate(-94.305deg);
   -o-transform: rotate(-94.305deg);
   transform: rotate(-94.305deg);
-  fill: #43d9ad;
-  opacity: 0.7;
+  fill: #00717e;
+  opacity: 0.5;
   -webkit-filter: blur(87px);
   filter: blur(87px);
 }
@@ -2480,7 +2480,7 @@ h6 {
 }
 
 .footer__items-link:hover {
-  color: var(--font-color-not-active);
+  color: var(--font-color-active);
 }
 
 .loaded .page__header {
@@ -3731,6 +3731,10 @@ h6 {
   margin-bottom: 1.5rem;
 }
 
+.hello-page__content-grid {
+  position: relative;
+}
+
 .hello-page__my-name {
   padding: 0 0.5rem;
   border-top: 1px solid rgba(194, 238, 255, 0.0823529412);
@@ -3748,6 +3752,13 @@ h6 {
 
 .hello-page__my-name div {
   display: inline-block;
+  width: 1rem;
+}
+
+.hello-page__my-name._shadow {
+  position: absolute;
+  top: 0;
+  opacity: 0.2;
 }
 
 .hello-page__title {
@@ -4003,11 +4014,9 @@ h6 {
   display: -ms-grid;
   display: grid;
   justify-items: center;
-  row-gap: 2rem;
-  min-height: 100%;
-  max-height: 63.2rem;
+  gap: 2rem;
   overflow-x: hidden;
-  -ms-grid-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 2rem 1fr 2rem 1fr;
   grid-template-columns: 1fr 1fr 1fr;
   scrollbar-width: none;
 }
@@ -4017,13 +4026,35 @@ h6 {
 }
 
 .project-page__column {
-  border-radius: 12px 12px 0 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 16px 16px 0 0;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  overflow: hidden;
+  -webkit-transition: -webkit-box-shadow 0.5s ease-in-out;
+  transition: -webkit-box-shadow 0.5s ease-in-out;
+  -o-transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
+}
+
+.project-page__column:hover {
+  -webkit-box-shadow: 0px 1px 7px #000;
+  box-shadow: 0px 1px 7px #000;
+}
+
+.project-page__column:hover img {
+  scale: 1.6;
 }
 
 .page-project__image {
+  cursor: pointer;
   position: relative;
   background: var(--background-side-bar);
-  height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4036,6 +4067,9 @@ h6 {
 }
 
 .page-project__image img {
+  -webkit-transition: scale 0.5s ease-in-out;
+  -o-transition: scale 0.5s ease-in-out;
+  transition: scale 0.5s ease-in-out;
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -4070,9 +4104,9 @@ h6 {
   -webkit-flex: 1 1 100%;
   -ms-flex: 1 1 100%;
   flex: 1 1 100%;
-  padding: 0 1rem;
+  padding: 1rem;
   line-height: 200%;
-  margin-bottom: 1px;
+  margin-bottom: 0.5rem;
 }
 
 .page-project__button {
@@ -4091,6 +4125,12 @@ h6 {
   border-radius: 4px;
   -webkit-box-shadow: 0px 0px 3px #000;
   box-shadow: 0px 0px 3px #000;
+}
+
+.page-project__button a:hover,
+.page-project__button a:active {
+  -webkit-box-shadow: 0px 0px 1px #000;
+  box-shadow: 0px 0px 1px #000;
 }
 
 .about-page {
@@ -4325,6 +4365,10 @@ h6 {
   pointer-events: all;
 }
 
+.content-mainslide__invisible {
+  display: none;
+}
+
 .content-mainslide__image {
   border: 1px solid var(--border-color);
   height: 100px;
@@ -4348,34 +4392,77 @@ h6 {
 
 .modal {
   background: var(--background-transparent);
-  overflow: hidden;
-  overflow-y: auto;
-  display: none;
+  display: block;
+  overflow-x: hidden;
   position: fixed;
-  padding: 7rem 0;
-  z-index: 9;
-  left: 0;
   top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  outline: 0;
   opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
-.modal__image {
+.modal._show {
+  opacity: 1;
+}
+
+.modal._show .modal__dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal._show .modal__buttons {
   -webkit-animation-name: zoom;
   -o-animation-name: zoom;
   animation-name: zoom;
   -webkit-animation-duration: 0.5s;
   -o-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  margin: auto;
+}
+
+.modal__dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  -o-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  -o-transition: -o-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out, -o-transform 0.4s ease-in-out;
+  margin: 4rem 15px;
+}
+
+.modal__body {
+  margin: 2rem auto;
+}
+
+.modal__content {
+  background: #fff;
+  position: relative;
+  border: 1px solid #999;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 1px 10px #000;
+  box-shadow: 1px 1px 10px #000;
+  overflow: hidden;
+}
+
+.modal__image {
+  margin: 0 auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
   pointer-events: none;
 }
 
-.modal._show {
+.modal__buttons {
+  background: var(--font-color-not-active);
+  padding: 2rem;
+  position: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4384,48 +4471,63 @@ h6 {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  opacity: 1;
-}
-
-.modal span {
   width: 100%;
-  -webkit-animation-name: zoom;
-  -o-animation-name: zoom;
-  animation-name: zoom;
-  -webkit-animation-duration: 0.5s;
-  -o-animation-duration: 0.5s;
-  animation-duration: 0.5s;
-  position: fixed;
-  top: 1.5rem;
-  color: var(--font-color-active);
-  font-size: 4rem;
-  font-weight: bold;
+  bottom: -webkit-calc(50% - 3.85rem);
+  bottom: calc(50% - 3.85rem);
+  color: black;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 200%;
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5960784314);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5960784314);
 }
 
-.modal span:hover,
-.modal span:focus {
-  color: var(--font-color-not-active);
-  text-decoration: none;
+.modal__button {
+  background: var(--font-color-active);
+  -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5960784314);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5960784314);
+  -webkit-transition: -webkit-box-shadow 0.1s ease-in-out;
+  transition: -webkit-box-shadow 0.1s ease-in-out;
+  -o-transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out;
+  transition: box-shadow 0.1s ease-in-out, -webkit-box-shadow 0.1s ease-in-out;
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+}
+
+.modal__button:active {
+  -webkit-box-shadow: 1px 1px 3px rgba(206, 206, 206, 0.5960784314);
+  box-shadow: 1px 1px 3px rgba(206, 206, 206, 0.5960784314);
+}
+
+.modal__button:not(:last-child) {
+  margin-right: 4rem;
 }
 
 @-webkit-keyframes zoom {
   from {
+    background-color: var(--font-color-active);
     -webkit-transform: scale(0);
+    transform: scale(0);
   }
 
   to {
+    background-color: var(--font-color-not-active);
     -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @-o-keyframes zoom {
   from {
+    background-color: var(--font-color-active);
     -o-transform: scale(0);
     transform: scale(0);
   }
 
   to {
+    background-color: var(--font-color-not-active);
     -o-transform: scale(1);
     transform: scale(1);
   }
@@ -4433,12 +4535,14 @@ h6 {
 
 @keyframes zoom {
   from {
+    background-color: var(--font-color-active);
     -webkit-transform: scale(0);
     -o-transform: scale(0);
     transform: scale(0);
   }
 
   to {
+    background-color: var(--font-color-not-active);
     -webkit-transform: scale(1);
     -o-transform: scale(1);
     transform: scale(1);
@@ -4491,6 +4595,11 @@ h6 {
 
   .page__desktop {
     max-height: 74rem;
+  }
+
+  .main-content__editor {
+    max-height: -webkit-calc(100vh - 10.6rem);
+    max-height: calc(100vh - 10.6rem);
   }
 
   .hello-page {
@@ -4551,8 +4660,13 @@ h6 {
     overflow-x: hidden;
   }
 
-  .project-page__column:not(:last-child) {
-    margin-right: 2rem;
+  .project-page__row {
+    max-height: 63.2rem;
+  }
+
+  .modal__dialog {
+    margin: 4rem auto;
+    max-width: 85rem;
   }
 }
 
@@ -4831,10 +4945,6 @@ h6 {
   .project-page__row {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
-  }
-
-  .project-page__column:not(:last-child) {
-    margin-bottom: 2rem;
   }
 }
 

@@ -181,7 +181,10 @@
 			}
 		}
 	}
-
+	//.hello-page__content-grid
+	&__content-grid {
+		position: relative;
+	}
 	// .hello-page__my-name
 	&__my-name {
 		padding: 0 0.5rem;
@@ -202,6 +205,12 @@
 
 		div {
 			display: inline-block;
+			width: 1rem;
+		}
+		&._shadow {
+			position: absolute;
+			top: 0;
+			opacity: 0.2;
 		}
 	}
 

@@ -73,39 +73,22 @@ export let grid = anime.timeline({
 grid
 	.add({
 		targets: '.hello-page__content-grid .el',
+		opacity: [
+			{ value: 1, easing: 'easeOutElastic', duration: 500 }
+		],
 		scale: [
 			{ value: .1, easing: 'easeOutSine', duration: 300 },
-			{ value: 1, easing: 'easeInOutQuad', duration: 1000 },
+			{ value: 1, easing: 'easeOutElastic', duration: 1200 }
 		],
 		delay: anime.stagger(200, { grid: [17, 1], from: 'center' })
-	}, 1500);
-//* ----------------------------- animePage ------------------------------------
-// export function animePage(el) {
-// 	anime({
-// 		targets: el,
-// 		opacity: 1,
-// 		// direction: 'alternate',
-// 		translateX: [
-// 			{ value: 0, duration: 1000, delay: 300 }
-// 		],
-// 		scaleX: [
-// 			{ value: 3, duration: 100, delay: 300, easing: 'easeInExpo' },
-// 			{ value: 1, duration: 900 }
-// 		],
-// 		// scale: anime.stagger([0.7, 1.1], { from: 'center' }),
-// 		// opacity: anime.stagger([0, 0], { from: 'center' }),
-// 		delay: anime.stagger(10, { start: 100 }),
-// 		easing: 'easeOutElastic(1, .8)',
-// 	});
-// };
-// export function animePage(el) {
-// 	anime({
-// 		targets: el,
-// 		delay: anime.stagger(100),
-// 		translateX: [700, 0],
-// 		delay: 300,
-// 	});
-// };
+	}, 2000)
+	.add({
+		targets: '.hello-page__content-grid',
+		scaleX: [
+			{ value: 0.7, duration: 100, delay: 0, easing: 'easeOutExpo' },
+			{ value: 1, duration: 900 },
+		],
+	}, 4300);
 //* ------------------------------ My name -------------------------------------
 // export let myname = anime({
 // 	targets: '.hello-page__my-name span',

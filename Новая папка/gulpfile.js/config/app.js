@@ -18,14 +18,14 @@ module.exports = {
 		output: {
 			filename: '[name].min.js',
 		},
-		// module: {
-		// 	rules: [
-		// 		{
-		// 			test: /\.css$/,
-		// 			use: ['style-loader', 'css-loader', 'js-loader'],
-		// 		},
-		// 	],
-		// },
+		module: {
+			rules: [
+				{
+					test: /\.css$/,
+					use: ['style-loader', 'css-loader', 'js-loader'],
+				},
+			],
+		},
 	},
 	svgSpr: {
 		shape: {

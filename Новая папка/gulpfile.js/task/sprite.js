@@ -7,7 +7,6 @@ const sprite = () => {
 			}))
 		}))
 		.pipe($.gul.svgmin($.app.svgMin))
-		.pipe($.gul.cheerio($.app.cheerio))
 		// .pipe($.gul.svgstore({ inlineSvg: true }))
 		.pipe($.gul.replace('&gt;', '>'))
 		.pipe($.gul.svgSprite($.app.svgSpr))

@@ -6,20 +6,30 @@ export default function modal() {
 		img.onclick = function (e) {
 			let target = e.target;
 			let sourse = target.closest('.content-mainslide__image').querySelector('source').srcset;
+			let ahref = target.closest('.content-mainslide').querySelector('.content-mainslide__link').href;
 			if (!target.closest('.mainslide__slide').classList.contains('swiper-slide-active')) {
-				console.log('not active');
 				e.preventDefault();
 			} else {
-				modal.classList.add('_show');
-				console.log(sourse);
 				let modalImg = modal.querySelector('.modal__image');
+				let _buttons = document.querySelectorAll('.modal__button');
+				modal.classList.add('_show');
+				modal.style.zIndex = '9';
 				modalImg.src = this.src;
-				console.log(modalImg.src);
+				modal.querySelector('.modal__link').href = ahref;
 				modal.querySelector('source').srcset = sourse;
-				var span = modal.querySelector("span");
-				span.onclick = function () {
-					modal.classList.remove('_show');
-				};
+				for (let i = 0; i < _buttons.length; i++) {
+					const _button = _buttons[i];
+					_button.addEventListener('click', () => {
+						modal.classList.remove('_show');
+						window.setTimeout(
+							function removethis() {
+								modal.style.display = "none";
+								modal.style.zIndex = '1';
+								modal.style.display = null;
+							}, 500
+						);
+					});
+				}
 			}
 		};
 	});

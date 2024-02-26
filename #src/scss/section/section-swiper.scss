@@ -24,6 +24,11 @@
 }
 
 .content-mainslide {
+	// .content-mainslide__invisible
+	&__invisible {
+		display: none;
+	}
+
 	// .content-mainslide__image
 	&__image {
 		border: 1px solid var(--border-color);
@@ -42,75 +47,5 @@
 			position: relative;
 			object-fit: cover;
 		}
-	}
-}
-
-.modal {
-	overflow: hidden;
-	overflow-y: auto;
-	display: none;
-	position: fixed;
-	padding: 7rem 0;
-	z-index: 9;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	background-color: var(--background-transparent);
-	opacity: 0;
-
-	// .modal__image
-	&__image {
-		animation-name: zoom;
-		animation-duration: 0.5s;
-		margin: auto;
-		display: block;
-		width: 80%;
-		max-width: 700px;
-		pointer-events: none;
-	}
-
-	&._show {
-		display: flex;
-		justify-content: center;
-		opacity: 1;
-	}
-
-	span {
-		width: 100%;
-		animation-name: zoom;
-		animation-duration: 0.5s;
-		position: fixed;
-		top: 1.5rem;
-		color: var(--font-color-active);
-		font-size: 4rem;
-		font-weight: bold;
-
-		&:hover,
-		&:focus {
-			color: var(--font-color-not-active);
-			text-decoration: none;
-			cursor: pointer;
-		}
-	}
-}
-
-@-webkit-keyframes zoom {
-	from {
-		-webkit-transform: scale(0);
-	}
-
-	to {
-		-webkit-transform: scale(1);
-	}
-}
-
-@keyframes zoom {
-	from {
-		transform: scale(0);
-	}
-
-	to {
-		transform: scale(1);
 	}
 }
