@@ -53,7 +53,7 @@ module.exports = {
 		},
 		mode: {
 			defs: {
-				dest: './svg',
+				dest: './',
 				sprite: './sprite.svg',
 			},
 		},
@@ -74,10 +74,6 @@ module.exports = {
 	renameScss: {
 		extname: '.css',
 		suffix: '.min',
-	},
-	renameSvg: {
-		// extname: '.css',
-		// suffix: '.min',
 	},
 	fonter: {
 		formats: ['woff', 'ttf', 'svg', 'otf'],
@@ -128,11 +124,11 @@ module.exports = {
 			quality: 75,
 			progressive: true
 		}),
-		recompress({
-			loops: 4,
-			min: 70,
-			max: 80,
-			quality: 'high'
-		})
+		// recompress({
+		// 	loops: 4,
+		// 	min: 70,
+		// 	max: 80,
+		// 	quality: 'high'
+		// })
 	])
 };

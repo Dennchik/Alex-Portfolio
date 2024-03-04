@@ -1,11 +1,9 @@
 const pathSrc = './#src';
 const pathDest = './build';
-const pathEnd = './public';
 
 
 module.exports = {
 	root: pathDest,
-	rootEnd: pathEnd,
 
 	json: {
 		fileName: 'data.json',
@@ -57,9 +55,5 @@ module.exports = {
 	},
 	clearFonts: {
 		watch: pathSrc + '/fonts/**/*.{eot,ttf,otf,otc,ttc,woff,woff2,svg}'
-	},
-	final: {
-		src: pathDest + '/**/*.*',
-		dest: pathEnd
 	}
 };

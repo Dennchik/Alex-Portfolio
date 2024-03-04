@@ -11,7 +11,6 @@ const sprite = () => {
 		// .pipe($.gul.svgstore({ inlineSvg: true }))
 		.pipe($.gul.replace('&gt;', '>'))
 		.pipe($.gul.svgSprite($.app.svgSpr))
-		.pipe($.gul.rename($.app.renameSvg))
 		.pipe($.gulp.dest($.path.svgSpr.dest));
 };
 module.exports = sprite;
