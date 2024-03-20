@@ -10,6 +10,7 @@
 	&__slide {
 		opacity: 0.3;
 		filter: grayscale(1);
+		filter: sepia(70%) invert(100%);
 		display: inline-flex;
 		flex-wrap: wrap;
 		flex-direction: column;
@@ -21,7 +22,7 @@
 		@include flex-justify-center;
 
 		&.swiper-slide-active {
-			filter: grayscale(0);
+			filter: none;
 			opacity: 1;
 			cursor: pointer;
 			pointer-events: all;
@@ -42,7 +43,6 @@
 		height: 100px;
 		overflow: hidden;
 		border-radius: 10px;
-		box-shadow: 0 1px 10px $boxShadow;
 		margin-bottom: 2rem;
 
 		img {

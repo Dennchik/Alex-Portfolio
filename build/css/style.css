@@ -4486,6 +4486,8 @@ h6 {
   opacity: 0.3;
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
+  -webkit-filter: sepia(70%) invert(100%);
+  filter: sepia(70%) invert(100%);
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -4521,8 +4523,8 @@ h6 {
 }
 
 .mainslide__slide.swiper-slide-active {
-  -webkit-filter: grayscale(0);
-  filter: grayscale(0);
+  -webkit-filter: none;
+  filter: none;
   opacity: 1;
   cursor: pointer;
   pointer-events: all;
@@ -4538,8 +4540,6 @@ h6 {
   height: 100px;
   overflow: hidden;
   border-radius: 10px;
-  -webkit-box-shadow: 0 1px 10px #000;
-  box-shadow: 0 1px 10px #000;
   margin-bottom: 2rem;
 }
 

@@ -48,11 +48,8 @@ function _progressValue() {
 			console.log(inlineValue.innerHTML);
 			progressValue.style.width = inlineValue.innerHTML;
 			progressValue.style.background = dotValue.style.color;
-
-
 		}
 	}
-
 }
 // ----------------------------(Tabs - items)-----------------------------------
 function topMenu() {
