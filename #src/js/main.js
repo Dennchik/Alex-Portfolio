@@ -10,6 +10,6 @@ mainSlede();
 import modal from './modules/modal.js';
 modal();
 
-import { tm_Layout, sideBar, topMenu, parentMenu } from "./modules/lauots.js";
-tm_Layout(); topMenu(); sideBar(); parentMenu();
+import { tm_Layout, sideBar, topMenu, parentMenu, _progressValue } from "./modules/lauots.js";
+tm_Layout(); topMenu(); sideBar(); parentMenu(), _progressValue();
 

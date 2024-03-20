@@ -1,7 +1,7 @@
 .mainslide {
 	// .mainslide__body
 	&__body {
-		min-height: 125%;
+		min-height: 110%;
 		display: flex;
 		justify-content: center;
 	}
@@ -9,16 +9,23 @@
 	// .mainslide__slide
 	&__slide {
 		opacity: 0.3;
+		filter: grayscale(1);
 		display: inline-flex;
 		flex-wrap: wrap;
-		@include flex-justify-center;
 		flex-direction: column;
 		align-self: center;
+		transition: all 0.9s ease 0s;
+		transition:
+			opacity 0.9s,
+			filter 0.9s ease 0s;
+		@include flex-justify-center;
 
 		&.swiper-slide-active {
-			cursor: pointer;
+			filter: grayscale(0);
 			opacity: 1;
+			cursor: pointer;
 			pointer-events: all;
+			color: #ffffff00;
 		}
 	}
 }
@@ -36,6 +43,7 @@
 		overflow: hidden;
 		border-radius: 10px;
 		box-shadow: 0 1px 10px $boxShadow;
+		margin-bottom: 2rem;
 
 		img {
 			position: relative;

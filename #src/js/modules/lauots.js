@@ -16,7 +16,10 @@ const $ = {
 	bttns: document.querySelectorAll('.burger-bottom'),
 	menuTitles: document.querySelectorAll('.parent-menu__title'),
 	buttonTabs: document.querySelectorAll('.submenu-child'),
-	bttn: document.querySelector('.burger-bottom')
+	bttn: document.querySelector('.burger-bottom'),
+	progressValues: document.querySelectorAll('.languages__progress-value'),
+	inlineValues: document.querySelectorAll('.d-inline__value'),
+	dotValues: document.querySelectorAll('.d-inline__octicon-dot')
 };
 // -----------------------(isMobile - Side Bar Menu)----------------------------
 if (isMobile.any()) {
@@ -34,6 +37,22 @@ function tm_Layout() {
 		$.contact.classList.remove('_active');
 		_toggleTerminal($.elTerminal);
 	};
+}
+// --------------------------(Languages - Value)--------------------------------
+function _progressValue() {
+	for (const i in $.inlineValues) {
+		if (Object.hasOwnProperty.call($.inlineValues, i)) {
+			const inlineValue = $.inlineValues[i];
+			const progressValue = $.progressValues[i];
+			const dotValue = $.dotValues[i];
+			console.log(inlineValue.innerHTML);
+			progressValue.style.width = inlineValue.innerHTML;
+			progressValue.style.background = dotValue.style.color;
+
+
+		}
+	}
+
 }
 // ----------------------------(Tabs - items)-----------------------------------
 function topMenu() {
@@ -195,4 +214,4 @@ const _toggleItem = (el) => {
 	}
 };
 // -----------------------------------------------------------------------------
-export { tm_Layout, sideBar, topMenu, parentMenu };
+export { tm_Layout, sideBar, topMenu, parentMenu, _progressValue };

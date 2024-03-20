@@ -29,14 +29,22 @@
 	"browserslist": [
 		"last 3 version"
 	],
+	"babel": {
+		"presets": [
+			"@babel/preset-env"
+		]
+	},
 	"devDependencies": {
-		"@types/jest": "^29.5.11",
+		"@babel/core": "^7.23.2",
+		"@babel/preset-env": "^7.23.2",
+		"@babel/register": "^7.18.9",
+		"@types/jest": "^29.5.12",
 		"browser-sync": "^2.27.10",
-		"css-loader": "^6.8.1",
-		"eslint-config-prettier": "^8.5.0",
+		"css-loader": "^6.10.0",
+		"eslint-config-prettier": "^9.1.0",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
-		"gulp-cache": "^1.1.3",
+		"gulp-babel": "^8.0.0",
 		"gulp-cheerio": "^1.0.0",
 		"gulp-concat": "^2.6.1",
 		"gulp-csso": "^4.0.1",
@@ -57,6 +65,7 @@
 		"gulp-plumber": "^1.2.1",
 		"gulp-pug": "^5.0.0",
 		"gulp-pugbem": "^2.2.4",
+		"gulp-purgecss": "^4.1.3",
 		"gulp-remove-html-comments": "^1.0.1",
 		"gulp-rename": "^2.0.0",
 		"gulp-replace": "^1.1.4",
@@ -71,6 +80,7 @@
 		"gulp-svgmin": "^4.1.0",
 		"gulp-svgstore": "^9.0.0",
 		"gulp-ttf2woff2": "^4.0.1",
+		"gulp-uglify": "^3.0.2",
 		"gulp-webp": "^4.0.1",
 		"gulp-webp-css": "^1.1.0",
 		"gulp-webp-html": "^1.0.2",
@@ -78,13 +88,14 @@
 		"imagemin-jpeg-recompress": "^7.1.0",
 		"imagemin-pngquant": "^9.0.2",
 		"js-loader": "^0.1.1",
-		"prettier": "2.7.1",
+		"prettier": "^3.2.5",
+		"raw-loader": "^4.0.2",
 		"require-dir": "^1.2.0",
-		"sass": "^1.69.7",
-		"sass-loader": "^13.3.3",
-		"style-loader": "^3.3.3",
-		"swiper": "^11.0.5",
-		"webpack": "^5.89.0",
+		"sass": "^1.54.5",
+		"sass-loader": "^14.1.0",
+		"style-loader": "^3.3.4",
+		"swiper": "^11.0.6",
+		"webpack": "^5.73.0",
 		"webpack-stream": "^7.0.0"
 	},
 	"dependencies": {
@@ -92,6 +103,8 @@
 		"D": "^1.0.0",
 		"del": "^6.1.1",
 		"gulp-cli": "^2.3.0",
-		"postcss": "^8.4.32"
+		"parallax-js": "^3.1.0",
+		"postcss": "^8.4.35",
+		"rellax": "^1.12.1"
 	}
 }

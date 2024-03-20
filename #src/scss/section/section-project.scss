@@ -6,19 +6,19 @@
 		width: 0;
 	}
 
-	// .scills-page __title
+	// .project-page__title
 	&__title {
 		color: #88c0ff;
 		font-size: 3rem;
 	}
 
-	// .scills-page __row
+	// .project-page__row
 	&__row {
+		overflow-x: hidden;
 		padding: 2rem;
 		display: grid;
 		justify-items: center;
 		gap: 2rem;
-		overflow-x: hidden;
 		grid-template-columns: 1fr 1fr 1fr;
 		&::-webkit-scrollbar {
 			width: 0;
@@ -27,40 +27,80 @@
 		@include _min-690 {
 			max-height: 63.2rem;
 		}
+		@include _screen-960 {
+			grid-template-columns: 1fr 1fr;
+		}
 		@include _690 {
 			grid-template-columns: 1fr;
 		}
 	}
 
-	// .scills-page__column
+	// .project-page__column
 	&__column {
+		max-width: 400px;
 		display: flex;
-		border-radius: 16px 16px 0 0;
-		height: min-content;
-		overflow: hidden;
-		transition: box-shadow 0.5s ease-in-out;
-
+		flex-direction: column;
 		&:hover {
 			box-shadow: 0px 1px 7px $boxShadowSecond;
+			.card-project__image {
+				filter: none;
+			}
+			[class*='icon-'] {
+				filter: none;
+			}
 			img {
-				scale: 1.6;
+				opacity: 0.5;
+				scale: 1.1;
+				filter: grayscale(0);
 			}
 		}
 	}
 }
 
-.page-project {
-	// .scills-page__image
+.card-project {
+	height: 100%;
+
+	// .card-project__body
+	&__body {
+		margin-bottom: 0.4rem;
+		height: 100%;
+		flex: 1 1 auto;
+		max-width: 400px;
+		display: flex;
+		flex-direction: column;
+		border-radius: 10px 10px 0 0;
+		overflow: hidden;
+		transition: box-shadow 0.5s ease-in-out;
+		background: var(--background-side-bar);
+	}
+
+	// .card-project__image
 	&__image {
 		cursor: pointer;
 		position: relative;
-		background: var(--background-side-bar);
 		display: flex;
 		flex-direction: column;
+		max-width: 100%;
+		border-bottom: solid 1px var(--border-color);
+		transition: filter 0.9s ease-in-out;
+		filter: sepia(70%) invert(100%);
+
+		[class*='icon-'] {
+			filter: sepia(100%) invert(50%);
+			transition: filter 0.9s ease-in-out;
+		}
 
 		img {
-			transition: scale 0.5s ease-in-out;
+			opacity: 0.3;
+			transition:
+				filter 0.9s,
+				scale 0.9s,
+				opacity 0.9s ease 0.3s;
 			object-fit: cover;
+			width: 400px;
+			height: 19rem;
+			max-width: 100%;
+			object-position: top;
 		}
 
 		span {
@@ -70,10 +110,11 @@
 			display: flex;
 		}
 
-		.icon-javascript {
+		.icon-java-script {
 			&::before {
 				border-radius: 5px;
 				overflow: hidden;
+				filter: grayscale(0);
 			}
 		}
 
@@ -81,22 +122,26 @@
 			font-size: 1.8rem;
 			height: auto;
 			color: var(--selected-color);
+			color: $font-color-var-name;
 			&:not(:last-child) {
 				margin-right: 0.5rem;
 			}
 		}
 	}
 
-	// .scills-page__text
+	// .card-project__text
 	&__text {
-		flex: 1 1 100%;
-		padding: 1rem;
+		height: auto;
+		flex: 1 1 auto;
+		padding: 1.6rem;
 		line-height: 200%;
 		margin-bottom: 0.5rem;
 	}
 
-	// .scills-page__button
+	// .card-project__button
 	&__button {
+		font-family: 'Georgia' serif;
+		font-size: 1.3rem;
 		padding-left: 1rem;
 		display: flex;
 		margin-bottom: 1rem;
@@ -110,6 +155,78 @@
 			&:active {
 				box-shadow: 0px 0px 1px $boxShadowSecond;
 			}
+		}
+	}
+}
+
+.languages {
+	padding: 0.5rem 1.6rem 1.6rem;
+	border-radius: 0 0 10px 10px;
+	display: flex;
+	height: 30%;
+	flex-direction: column;
+	background: var(--background-side-bar);
+
+	// .languages__progress
+	&__progress {
+	}
+
+	// .languages__list-style
+	&__list-style {
+		flex: 1 1 auto;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	// .languages__title
+	&__title {
+		display: table-row;
+		color: var(--font-color-second);
+		font-size: 1.6rem;
+		line-height: 200%;
+	}
+
+	// .languages__progress-value
+	&__progress-value {
+		display: inline-block;
+		height: 5px;
+		border-radius: 2.5px;
+	}
+}
+
+.d-inline {
+	// .d-inline__inline-flex
+	&__inline-flex {
+		margin-right: 1.2rem;
+		display: inline-flex;
+		overflow: visible !important;
+		vertical-align: text-bottom;
+		fill: currentColor;
+	}
+
+	// .d-inline__octicon-dot
+	&__octicon-dot {
+		display: inline-block;
+		margin-right: 0.5rem;
+	}
+
+	// .d-inline__text
+	&__text {
+		margin-right: 0.5rem;
+		font: {
+			family: $font-family-secondary;
+			size: 1.2rem;
+			weight: 400;
+		}
+		color: #919191;
+	}
+
+	// .d-inline__value
+	&__value {
+		font: {
+			family: $font-family-secondary;
+			size: 1.2rem;
+			weight: 400;
 		}
 	}
 }

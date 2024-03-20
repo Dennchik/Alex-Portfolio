@@ -68,7 +68,6 @@
 	&__body {
 		background: var(--background-terminal);
 		display: flex;
-		padding-left: 2rem;
 		height: calc(100% - 3rem);
 	}
 
@@ -79,7 +78,6 @@
 
 		&:nth-child(1) {
 			flex: 0 1 100%;
-			padding-right: 1rem;
 			@include flex-justify-center;
 			.hello-page__column {
 				align-content: center;

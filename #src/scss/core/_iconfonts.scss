@@ -27,9 +27,19 @@
   //* Better Font Rendering
 }
 
-.icon-react {
+.icon-dzen {
   &:before {
-    content: $icon-react;
+    content: $icon-dzen;
+  }
+}
+.icon-instagram-squard {
+  &:before {
+    content: $icon-instagram-squard;
+  }
+}
+.icon-pug {
+  &:before {
+    content: $icon-pug;
   }
 }
 .icon-gulp {
@@ -37,9 +47,9 @@
     content: $icon-gulp;
   }
 }
-.icon-javascript {
+.icon-java-script {
   &:before {
-    content: $icon-javascript;
+    content: $icon-java-script;
   }
 }
 .icon-java {
@@ -52,9 +62,14 @@
     content: $icon-vue-dot-js;
   }
 }
-.icon-node-dot-js {
+.icon-node-js {
   &:before {
-    content: $icon-node-dot-js;
+    content: $icon-node-js;
+  }
+}
+.icon-react {
+  &:before {
+    content: $icon-react;
   }
 }
 .icon-money-bag {
@@ -82,6 +97,11 @@
     content: $icon-file-java-o;
   }
 }
+.icon-instagram-circle {
+  &:before {
+    content: $icon-instagram-circle;
+  }
+}
 .icon-dollar-money {
   &:before {
     content: $icon-dollar-money;
@@ -90,6 +110,11 @@
 .icon-dollars {
   &:before {
     content: $icon-dollars;
+  }
+}
+.icon-recycle {
+  &:before {
+    content: $icon-recycle;
   }
 }
 .icon-bug {
@@ -617,6 +642,11 @@
     content: $icon-coin-dollar;
   }
 }
+.icon-git-hub-square {
+  &:before {
+    content: $icon-git-hub-square;
+  }
+}
 .icon-google-plus-sq {
   &:before {
     content: $icon-google-plus-sq;
@@ -647,24 +677,19 @@
     content: $icon-git-hub-circle;
   }
 }
-.icon-git-hub-square {
-  &:before {
-    content: $icon-git-hub-square;
-  }
-}
 .icon-fire-flame {
   &:before {
     content: $icon-fire-flame;
   }
 }
-.icon-linked-in {
+.icon-instagram {
   &:before {
-    content: $icon-linked-in;
+    content: $icon-instagram;
   }
 }
-.icon-linkedin-sq {
+.icon-instagram-square {
   &:before {
-    content: $icon-linkedin-sq;
+    content: $icon-instagram-square;
   }
 }
 .icon-wikipedia1 {
@@ -702,9 +727,9 @@
     content: $icon-google-circle;
   }
 }
-.icon-google-sq {
+.icon-google-squard {
   &:before {
-    content: $icon-google-sq;
+    content: $icon-google-squard;
   }
 }
 .icon-google {
@@ -742,9 +767,9 @@
     content: $icon-soundcloud-square;
   }
 }
-.icon-soundcloud {
+.icon-sound-cloud {
   &:before {
-    content: $icon-soundcloud;
+    content: $icon-sound-cloud;
   }
 }
 .icon-windows {
@@ -1847,24 +1872,9 @@
     content: $icon-arrow-leftc-o;
   }
 }
-.icon-arrow-thin-down {
-  &:before {
-    content: $icon-arrow-thin-down;
-  }
-}
-.icon-arrow-thin-left {
-  &:before {
-    content: $icon-arrow-thin-left;
-  }
-}
 .icon-arrow-thin-right {
   &:before {
     content: $icon-arrow-thin-right;
-  }
-}
-.icon-arrow-thin-up {
-  &:before {
-    content: $icon-arrow-thin-up;
   }
 }
 .icon-arrow-up-o {

@@ -11,14 +11,14 @@ block side-bar
 
 block editor
 	.editor
-		section._section._active 
+		section._section
 			.bgblurs-box
 				+svg('green-shadow','bg-blurs', 'bgblurs-box__top')
 				+svg('blue-shadow','bg-blurs','bgblurs-box__bottom')
 			include ../partials/section-hello
 		section._section
 			include ../partials/section-scills
-		section._section
+		section._section._active 
 			include ../partials/section-project 
 		include ../partials/section-terminal
 block move-content 

@@ -16,17 +16,17 @@ export default function mainSlide(
 ) {
 	if (mainslide) {
 		new Swiper(mainslide, {
-			direction: 'vertical',
+			direction: "vertical",
 			speed: 800,
 			loop: true,
+			// observer: true,
 			grabCursor: true,
-			observer: true,
-			autoHeight: true,
-			mousewheel: true,
-			centeredSlides: true,
-			initialSlide: 2,
 			spaceBetween: 30,
+			mousewheel: true,
+			initialSlide: 3,
 			slidesPerView: 7,
+			autoHeight: true,
+			centeredSlides: true,
 			updateOnWindowResize: true,
 
 			pagination: {
