@@ -3890,6 +3890,10 @@ h6 {
   border-top: none;
 }
 
+.scills-page__row:nth-child(2) p {
+  text-indent: 3rem;
+}
+
 .scills-page__header {
   gap: 2rem;
   display: -webkit-box;
