@@ -305,17 +305,17 @@ h6 {
 }
 
 @font-face {
-  font-family: "Georgia";
+  font-family: "icons-set";
   font-display: swap;
-  src: url("../fonts/Georgia.eot") format("eot"), url("../fonts/Georgia.woff") format("woff"), url("../fonts/Georgia.woff2") format("woff2"), url("../fonts/Georgia.ttf") format("truetype");
+  src: url("../fonts/icons-set.eot") format("eot"), url("../fonts/icons-set.woff") format("woff"), url("../fonts/icons-set.woff2") format("woff2"), url("../fonts/icons-set.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "icons-set";
+  font-family: "Georgia";
   font-display: swap;
-  src: url("../fonts/icons-set.eot") format("eot"), url("../fonts/icons-set.woff") format("woff"), url("../fonts/icons-set.woff2") format("woff2"), url("../fonts/icons-set.ttf") format("truetype");
+  src: url("../fonts/Georgia.eot") format("eot"), url("../fonts/Georgia.woff") format("woff"), url("../fonts/Georgia.woff2") format("woff2"), url("../fonts/Georgia.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
