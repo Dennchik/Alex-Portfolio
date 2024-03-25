@@ -11,18 +11,21 @@ export default function modal() {
 				e.preventDefault();
 			} else {
 				let modalImg = modal.querySelector('.modal__image');
-				let _buttons = document.querySelectorAll('.modal__button');
+				let _closeModalButtons = document.querySelectorAll('._close-modal');
 				modal.classList.add('_show');
+				modal.classList.remove('bounceOutDown');
+				modal.classList.add('bounceInn');
 				modal.style.zIndex = '9';
 				modalImg.src = this.src;
 				modal.querySelector('.modal__link').href = ahref;
 				modal.querySelector('source').srcset = sourse;
-				for (let i = 0; i < _buttons.length; i++) {
-					const _button = _buttons[i];
-					_button.addEventListener('click', () => {
-						modal.classList.remove('_show');
+				for (let i = 0; i < _closeModalButtons.length; i++) {
+					const _closeModalButton = _closeModalButtons[i];
+					_closeModalButton.addEventListener('click', () => {
+						modal.classList.add('bounceOutDown');
 						window.setTimeout(
 							function removethis() {
+								modal.classList.remove('_show');
 								modal.style.display = "none";
 								modal.style.zIndex = '1';
 								modal.style.display = null;

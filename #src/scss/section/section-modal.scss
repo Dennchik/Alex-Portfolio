@@ -10,8 +10,19 @@
 	background-color: var(--background-transparent);
 	opacity: 0;
 	transition: opacity 0.5s linear;
+	// display: none;
+
+	&.bounceInn {
+		animation-duration: 0.75s;
+		animation-name: bounceIn;
+	}
+
+	&.bounceOutDown {
+		animation-name: bounceOutDown;
+	}
 
 	&._show {
+		display: block;
 		opacity: 1;
 
 		.modal__dialog {
@@ -19,13 +30,13 @@
 		}
 
 		.modal__buttons {
-			animation-name: zoom;
+			animation-name: zoomOpen;
 			animation-duration: 0.5s;
 		}
 	}
 	// .modal__dialog
 	&__dialog {
-		transform: translate(0, -25%);
+		// transform: translate(0, -25%);
 		transition: transform 0.4s ease-in-out;
 		margin: 4rem 15px;
 
@@ -91,14 +102,69 @@
 	}
 }
 
-@keyframes zoom {
-	from {
-		background-color: var(--font-color-active);
-		transform: scale(0);
-	}
+@keyframes zoomOpen {
+	// from {
+	// 	background-color: var(--font-color-active);
+	// 	transform: scale(0);
+	// }
 
+	// to {
+	// 	background-color: var(--font-color-not-active);
+	// 	transform: scale(1);
+	// }
+}
+@keyframes bounceOutDown {
+	20% {
+		-webkit-transform: translate3d(0, 10px, 0);
+		transform: translate3d(0, 10px, 0);
+	}
+	40%,
+	45% {
+		-webkit-transform: translate3d(0, -20px, 0);
+		opacity: 1;
+		transform: translate3d(0, -20px, 0);
+	}
 	to {
-		background-color: var(--font-color-not-active);
-		transform: scale(1);
+		-webkit-transform: translate3d(0, 2000px, 0);
+		opacity: 0;
+		transform: translate3d(0, 2000px, 0);
+	}
+}
+@keyframes bounceIn {
+	0%,
+	20%,
+	40%,
+	60%,
+	80%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+		animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	0% {
+		-webkit-transform: scale3d(0.3, 0.3, 0.3);
+		opacity: 0;
+		transform: scale3d(0.3, 0.3, 0.3);
+	}
+	20% {
+		-webkit-transform: scale3d(1.1, 1.1, 1.1);
+		transform: scale3d(1.1, 1.1, 1.1);
+	}
+	40% {
+		-webkit-transform: scale3d(0.9, 0.9, 0.9);
+		transform: scale3d(0.9, 0.9, 0.9);
+	}
+	60% {
+		-webkit-transform: scale3d(1.03, 1.03, 1.03);
+		opacity: 1;
+		transform: scale3d(1.03, 1.03, 1.03);
+	}
+	80% {
+		-webkit-transform: scale3d(0.97, 0.97, 0.97);
+		transform: scale3d(0.97, 0.97, 0.97);
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		opacity: 1;
+		transform: scaleX(1);
 	}
 }
