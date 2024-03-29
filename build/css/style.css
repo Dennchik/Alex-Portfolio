@@ -3776,7 +3776,7 @@ h6 {
 
 .hello-page__title {
   font: 450 2rem/normal var(--font-color-title);
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
   opacity: 0;
   color: var(--font-color-second);
 }
